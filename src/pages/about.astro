@@ -1,3 +1,30 @@
+---
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Claude",
+  country: "United Kingdom",
+  occupation: "software engineer",
+  hobbies: ["exercise, travelling, sports, fashion, DIY"],
+};
+
+const technicalSkills = {
+  Languages: ["JavaScript ", "Java ", "HTML/CSS ", "TypeScript ", "JSON "],
+  Frameworks: [
+    "React",
+    "Node.js",
+    "REST",
+    "HTTPS",
+    "DNS",
+    "AWS",
+    "Git",
+    "Bitbucket",
+  ],
+  Databases: ["SQL(MySQL, Oracle)", "NoSQL (DynamoDB, MongoDB)"],
+  Other: ["Postman", "Jest"],
+};
+---
+
 <a href='/'>Home</a>
 <a href='/about/'>About</a>
 <a href='/blog'>Blog</a>
@@ -6,21 +33,46 @@
   <head>
     <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'
+      rel='stylesheet'
+    />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      h1 {
+        color: rgb(255, 255, 255);
+        font-size: medium;
+      }
+      body,
+      p,
+      li {
+        font-weight: lighter;
+      }
+    </style>
   </head>
   <body>
-    <h1>About Page</h1>
-    <h2>About Me</h2>
+    <h1>{pageTitle}</h1>
     <p>
-      A versatile software engineer with 3+ years of building scalable, reliable
-      services. Proficient in JavaScript, TypeScript, and Node.js, with
-      expertise in designing and implementing cloud-based architectures on
-      platforms like AWS. Strong track record of collaborating
-      cross-functionally to deliver high-quality solutions that exceed user
-      expectations. Quick learner, adept at rapidly acquiring new skills to meet
-      project needs.
+      A versatile {identity.occupation} with 3+ years of building scalable, reliable
+      services. Proficient in JavaScript, TypeScript, and Node.js, with expertise
+      in designing and implementing cloud-based architectures on platforms like AWS.
+      Strong track record of collaborating cross-functionally to deliver high-quality
+      solutions that exceed user expectations. Quick learner, adept at rapidly acquiring
+      new skills to meet project needs.
+    </p>
+    <p>
+      Having worked as an engineer for 4+ years in London, i have built an array
+      of knowledge over {technicalSkills.Languages}.
+    </p>
+    <p>
+      I've used a number of frameworks and tools such <ul>
+        {technicalSkills.Frameworks.map((framework) => <li>{framework}</li>)}
+      </ul>
     </p>
   </body>
 </html>
