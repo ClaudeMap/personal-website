@@ -23,6 +23,21 @@ const technicalSkills = {
   Databases: ["SQL(MySQL, Oracle)", "NoSQL (DynamoDB, MongoDB)"],
   Other: ["Postman", "Jest"],
 };
+
+const bodyFontColor = "#deedeed0";
+const bodyFontFamily = "'Plus Jakarta Sans', sans-serif";
+const bodyFontSize = "16px";
+const bodyFontWeight = "350";
+const bodyMargin = "0";
+const bodyPadding = "0";
+
+const linkFontFamily = "'Plus Jakarta Sans', sans-serif";
+const linkFontSize = "14px";
+const linkFontColor = "#deedee";
+const linkFontWeight = "250";
+const mainHeadingFontSize = "32px";
+const mainHeadingFontFamily = "'Montserrat', sans-serif";
+const mainHeadingFontColor = "#c61414";
 ---
 
 <a href='/'>Home</a>
@@ -37,21 +52,66 @@ const technicalSkills = {
       href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'
       rel='stylesheet'
     />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'
+      rel='stylesheet'
+    />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style>
+    <style
+      define:vars={{
+        linkFontFamily,
+        linkFontSize,
+        linkFontColor,
+        linkFontWeight,
+        bodyFontFamily,
+        bodyFontSize,
+        bodyFontColor,
+        bodyFontWeight,
+        bodyMargin,
+        bodyPadding,
+        mainHeadingFontFamily,
+        mainHeadingFontSize,
+        mainHeadingFontColor,
+      }}
+    >
       body {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: var(--bodyFontFamily);
+        font-size: var(--bodyFontSize);
+        color: var(--bodyFontColor);
+        font-weight: var(--bodyFontWeight);
+        margin: var(--bodyMargin);
+        padding: var(--bodyPadding);
+      }
+      a {
+        font-family: var(--linkFontFamily);
+        font-size: var(--linkFontSize);
+        color: var(--linkFontColor);
+      }
+
+      p {
+        font-family: var(--bodyFontFamily); /* Explicitly inherit from body */
+        font-size: var(--bodyFontSize);
+        color: var(--bodyFontColor);
+        font-weight: var(--bodyFontWeight);
+        margin-bottom: 1rem;
+        line-height: 1.6;
       }
       h1 {
-        color: rgb(255, 255, 255);
-        font-size: medium;
+        font-family: var(--mainHeadingFontFamily);
+        font-size: var(--mainHeadingFontSize);
+        color: var(--mainHeadingFontColor);
       }
-      body,
-      p,
+
       li {
         font-weight: lighter;
+        color: aliceblue;
+        font-size: medium;
+      }
+      .skill {
+        color: #deedeed0;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -71,7 +131,11 @@ const technicalSkills = {
     </p>
     <p>
       I've used a number of frameworks and tools such <ul>
-        {technicalSkills.Frameworks.map((framework) => <li>{framework}</li>)}
+        {
+          technicalSkills.Frameworks.map((framework) => (
+            <li class='skill'>{framework}</li>
+          ))
+        }
       </ul>
     </p>
   </body>
