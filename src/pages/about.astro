@@ -24,20 +24,14 @@ const technicalSkills = {
   Other: ["Postman", "Jest"],
 };
 
-const bodyFontColor = "#deedeed0";
-const bodyFontFamily = "'Plus Jakarta Sans', sans-serif";
-const bodyFontSize = "16px";
-const bodyFontWeight = "350";
-const bodyMargin = "0";
-const bodyPadding = "0";
-
 const linkFontFamily = "'Plus Jakarta Sans', sans-serif";
 const linkFontSize = "14px";
 const linkFontColor = "#deedee";
 const linkFontWeight = "250";
 const mainHeadingFontSize = "32px";
-const mainHeadingFontFamily = "'Montserrat', sans-serif";
-const mainHeadingFontColor = "#c61414";
+// const mainHeadingFontFamily = "'Montserrat', sans-serif";
+
+import "../styles/global.css";
 ---
 
 <a href='/'>Home</a>
@@ -65,43 +59,23 @@ const mainHeadingFontColor = "#c61414";
         linkFontSize,
         linkFontColor,
         linkFontWeight,
-        bodyFontFamily,
-        bodyFontSize,
-        bodyFontColor,
-        bodyFontWeight,
-        bodyMargin,
-        bodyPadding,
-        mainHeadingFontFamily,
         mainHeadingFontSize,
-        mainHeadingFontColor,
       }}
     >
-      body {
-        font-family: var(--bodyFontFamily);
-        font-size: var(--bodyFontSize);
-        color: var(--bodyFontColor);
-        font-weight: var(--bodyFontWeight);
-        margin: var(--bodyMargin);
-        padding: var(--bodyPadding);
-      }
       a {
         font-family: var(--linkFontFamily);
         font-size: var(--linkFontSize);
         color: var(--linkFontColor);
       }
-
       p {
-        font-family: var(--bodyFontFamily); /* Explicitly inherit from body */
-        font-size: var(--bodyFontSize);
-        color: var(--bodyFontColor);
-        font-weight: var(--bodyFontWeight);
+        color: "#deedeed0";
         margin-bottom: 1rem;
         line-height: 1.6;
       }
+
       h1 {
-        font-family: var(--mainHeadingFontFamily);
+        /* font-family: var(--mainHeadingFontFamily); */
         font-size: var(--mainHeadingFontSize);
-        color: var(--mainHeadingFontColor);
       }
 
       li {
