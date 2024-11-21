@@ -1,0 +1,213 @@
+/*Font - Google Plus Jakarta Sans*/
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+/* CSS Variables*/
+
+/*Font - Calibre Font Family Definitions*/
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreRegular.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreRegularItalic.otf) format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreMedium.otf) format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreMediumItalic.otf) format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreSemibold.otf) format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreSemiboldItalic.otf) format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreBold.otf) format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreBoldItalic.otf) format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreBlack.otf) format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreBlackItalic.otf) format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreLight.otf) format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreThin.otf) format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreThinItalic.otf) format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+:root {
+  --font-weight-body: 400;
+  --font-weight-link: 500;
+  --font-weight-h1: 900;
+  --font-weight-h2: 700;
+  --font-weight-h3: 600;
+  --font-weight-title: 700;
+  --font-weight-li: 500;
+  --font-size-body: 1rem;
+  --font-size-link: 1rem;
+  --font-size-h1: 3rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-title: 2.25rem;
+  --font-size-li: 1rem;
+
+  /* Body and Text Colors*/
+  --color-bg: #0a192f; /* Navy */
+  --color-section-bg: #112240; /* Light Navy */
+  --color-text: #ccd6f6; /* Lightest Slate */
+  --color-secondary-text: #8892b0; /* Slate */
+  --color-title: #e6f1ff; /* White */
+  --color-link: #64ffda; /* Green */
+  --color-border: #a8b2d1; /* Light Slate */
+
+  /* Header Colors*/
+  --color-h1: #e6f1ff; /* White */
+  --color-h2: #ccd6f6; /* Lightest Slate */
+  --color-h3: #8892b0; /* Slate */
+
+  /* Link and Interactive States */
+  --color-link-hover: #52e0c4; /* Slightly darker Green for hover */
+
+  /* Border and Divider Colors */
+  --color-divider: #a8b2d1; /* Light Slate */
+
+  /* FIX THIS SECTION*/
+  --body-font-family: "Calibre", sans-serif;
+  --body-font-size: 16px;
+  --body-font-weight: 350;
+  --body-color: #deedeed0;
+  --background-color: #f1f5f9;
+  --heading-color: #c61414;
+  --link-color: #56e6ff99;
+  --link-weight: 250;
+  --link-font-size: 14px;
+  --max-width: 80ch;
+  --padding: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {
+  background-color: var(--background-color);
+  font-family: var(--body-font-family);
+} */
+
+body {
+  font-family: var(--body-font-family);
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  margin: 0 auto;
+  width: 100%;
+  max-width: fit-content; /*adjust width put in box*/
+  padding: var(--padding);
+  line-height: 1.5;
+  text-align: left;
+  background-color: #030203;
+  background-size: 100vw 110vh;
+  /* background-image: ; */
+}
+
+a {
+  font-family: var(--linkFontFamily);
+  font-size: var(--linkFontSize);
+  color: var(--linkFontColor);
+}
+
+p {
+  font-family: "Calibre", sans-serif;
+  font-size: 16px;
+  font-weight: 350;
+  color: #deedeed0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #c61414;
+  margin: 1rem 0;
+  font-family: "CalibreBold", sans-serif;
+}
+/*
+  
+
+
+  li {
+	font-weight: lighter;
+	color: aliceblue;
+	font-size: medium;
+  }
+  .skill {
+	color: #deedeed0;
+	font-weight: bold;
+  }
+*/
