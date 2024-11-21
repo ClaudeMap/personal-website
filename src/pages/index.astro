@@ -1,13 +1,7 @@
 ---
 const pageTitle = "Home";
 import "../styles/global.css";
-
 ---
-
-<!--page navigation routes-->
-<a href='/'>Home</a>
-<a href='/about/'>About</a>
-<a href='/blog'>Blog</a>
 
 <html lang='en'>
   <head>
@@ -18,6 +12,11 @@ import "../styles/global.css";
     <title>Astro</title>
   </head>
   <body>
-    <h1>{pageTitle}</h1>
+    <main>
+      <a href='/'>/home</a>
+      <a href='/about/'>/about</a>
+      <a href='/blog'>/blog</a>
+      <h1>{pageTitle}</h1>
+    </main>
   </body>
 </html>
