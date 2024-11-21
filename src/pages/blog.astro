@@ -3,10 +3,6 @@ const pageTitle = "Blog";
 import "../styles/global.css";
 ---
 
-<a href='/'>Home</a>
-<a href='/about/'>About</a>
-<a href='/blog'>Blog</a>
-
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
@@ -16,13 +12,19 @@ import "../styles/global.css";
     <title>Astro</title>
   </head>
   <body>
-    <h1>{pageTitle}</h1>
-    <h2>All things engineering & tech Blog</h2>
-    <p>Blog content will go here</p>
-    <ul>
-      <li><a href='/posts/post-1'>hello_world</a></li>
-      <li><a href='/posts/post-2'>30 days of JS</a></li>
-      <li><a href='/posts/post-3'>5 core concepts to know</a></li>
-    </ul>
+    <main>
+      <a href='/'>/home</a>
+      <a href='/about/'>/about</a>
+      <a href='/blog'>/blog</a>
+
+      <h1>{pageTitle}</h1>
+      <h2 class="big-heading">All things engineering & tech Blog</h2>
+      <p>Blog content will go here</p>
+      <ul>
+        <li><a href='/posts/post-1'>hello_world</a></li>
+        <li><a href='/posts/post-2'>30 days of JS</a></li>
+        <li><a href='/posts/post-3'>5 core concepts to know</a></li>
+      </ul>
+    </main>
   </body>
 </html>
