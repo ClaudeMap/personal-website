@@ -1,5 +1,5 @@
 ---
-const pageTitle = "About Me";
+const pageTitle = "Claude Mapara";
 
 const identity = {
   firstName: "Claude",
@@ -24,19 +24,8 @@ const technicalSkills = {
   Other: ["Postman", "Jest"],
 };
 
-const linkFontFamily = "'Plus Jakarta Sans', sans-serif";
-const linkFontSize = "14px";
-const linkFontColor = "#deedee";
-const linkFontWeight = "250";
-const mainHeadingFontSize = "32px";
-// const mainHeadingFontFamily = "'Montserrat', sans-serif";
-
 import "../styles/global.css";
 ---
-
-<a href='/'>Home</a>
-<a href='/about/'>About</a>
-<a href='/blog'>Blog</a>
 
 <html lang='en'>
   <head>
@@ -53,64 +42,32 @@ import "../styles/global.css";
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style
-      define:vars={{
-        linkFontFamily,
-        linkFontSize,
-        linkFontColor,
-        linkFontWeight,
-        mainHeadingFontSize,
-      }}
-    >
-      a {
-        font-family: var(--linkFontFamily);
-        font-size: var(--linkFontSize);
-        color: var(--linkFontColor);
-      }
-      p {
-        color: "#deedeed0";
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-
-      h1 {
-        /* font-family: var(--mainHeadingFontFamily); */
-        font-size: var(--mainHeadingFontSize);
-      }
-
-      li {
-        font-weight: lighter;
-        color: aliceblue;
-        font-size: medium;
-      }
-      .skill {
-        color: #deedeed0;
-        font-weight: bold;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <h1>{pageTitle}</h1>
-    <p>
-      A versatile {identity.occupation} with 3+ years of building scalable, reliable
-      services. Proficient in JavaScript, TypeScript, and Node.js, with expertise
-      in designing and implementing cloud-based architectures on platforms like AWS.
-      Strong track record of collaborating cross-functionally to deliver high-quality
-      solutions that exceed user expectations. Quick learner, adept at rapidly acquiring
-      new skills to meet project needs.
-    </p>
-    <p>
-      Having worked as an engineer for 4+ years in London, i have built an array
-      of knowledge over {technicalSkills.Languages}.
-    </p>
-    <p>
-      I've used a number of frameworks and tools such <ul>
-        {
-          technicalSkills.Frameworks.map((framework) => (
-            <li class='skill'>{framework}</li>
-          ))
-        }
-      </ul>
-    </p>
+    <main>
+      <a href='/'>/home</a>
+      <a href='/about/'>/about</a>
+      <a href='/blog'>/blog</a>
+      <h1>Hi, my name is</h1>
+      <h2 class='big-heading'>{pageTitle}.</h2>
+      <h3 class='big-heading'>I build things for the web.</h3>
+      <p>
+        I'm a software engineer based in London, specializing in building
+        scalable and reliable cloud-based solutions using mostly AWS and
+        occasionally other providers. Currently, I'm focusing on building...
+        Having worked as an engineer for 4+ years in London, I have built an
+        array of knowledge over {technicalSkills.Languages}.
+      </p>
+      <p>
+        I've used a number of frameworks and tools such <ul class='skills-grid'>
+          {
+            technicalSkills.Frameworks.map((framework) => (
+              <li class='skill-item'>{framework}</li>
+            ))
+          }
+        </ul>
+      </p>
+    </main>
   </body>
 </html>
