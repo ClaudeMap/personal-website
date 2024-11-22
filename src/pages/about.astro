@@ -1,4 +1,7 @@
 ---
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+
 const pageTitle = "Claude Mapara";
 
 const identity = {
@@ -23,8 +26,6 @@ const technicalSkills = {
   Databases: ["SQL(MySQL, Oracle)", "NoSQL (DynamoDB, MongoDB)"],
   Other: ["Postman", "Jest"],
 };
-
-import "../styles/global.css";
 ---
 
 <html lang='en'>
@@ -46,9 +47,7 @@ import "../styles/global.css";
   </head>
   <body>
     <main>
-      <a href='/'>/home</a>
-      <a href='/about/'>/about</a>
-      <a href='/blog'>/blog</a>
+      <Navigation />
       <h1>Hi, my name is</h1>
       <h2 class='big-heading'>{pageTitle}.</h2>
       <h3 class='big-heading'>I build things for the web.</h3>
