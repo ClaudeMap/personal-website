@@ -412,7 +412,6 @@ img {
 h1 {
   color: var(--color-h1);
   margin: 0.625rem 0 0.625rem 0;
-  padding: 0 0.625rem 0 0.625rem;
   font-family: var(--font-family);
   font-weight: var(--font-weight-title);
   font-size: var(--font-size-title);
@@ -462,5 +461,3 @@ li.skill-item {
   font-size: var(--font-size-li);
   margin: 0;
 }
-
-
