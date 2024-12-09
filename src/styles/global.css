@@ -152,17 +152,19 @@
     display: block;
     position: relative;
   }
+  .styled-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-section-bg);
+    z-index: 1000;
+    padding: 1rem;
+  }
 }
 
-.styled-list {
-  display: flex;
-  font-size: var(--font-size-link);
-  flex-direction: row;
-  gap: 2rem;
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-}
 
 .styled-list a {
   text-decoration: none;
