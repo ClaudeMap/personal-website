@@ -138,12 +138,52 @@
   /* Border and Divider Colors */
   --color-divider: #a8b2d1; /* Light Slate */
 
-  /* Main Content */
-  --main-padding: 100px;
+  /* Main Content Desktop */
+  --main-padding: 0 100px;
   --main-max-width: 1024px;
   --main-bg-color: #0a192f; /* Navy */
   --main-color: #112240; /* light Navy */
   --main-line-height: 1.3rem;
+
+  /* Main Content Mobile */
+  --main-mobile-padding: 0 25px;
+  --main-mobile-max-width: 100%;
+  --main-mobile-bg-color: #0a192f; /* Navy */
+  --main-mobile-color: #112240; /* light Navy */
+  --main-mobile-line-height: 1.3rem;
+}
+
+main {
+  padding: var(--main-padding);
+  max-width: var(--main-max-width);
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+  line-height: var(--main-line-height);
+  flex: 1;
+}
+
+body {
+  font-family: var(--body-font-family);
+  color: var(--body-color);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--font-line-height);
+  background-color: var(--color-bg);
+  margin: 0;
+  width: 100%;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html {
+  background-color: var(--background-color);
+  font-family: var(--body-font-family);
+  scrollbar-width: thin;
+  height: 100%;
+  margin: 0;
 }
 
 /* Navigation Bar Styles*/
@@ -212,6 +252,14 @@
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 720px) {
+  main {
+    padding: var(--main-mobile-padding);
+    max-width: var(--main-mobile-max-width);
+    background-color: var(--main-mobile-bg-color);
+    line-height: var(--main-mobile-line-height);
+    flex: 1;
+    box-sizing: border-box;
+  }
   .navigation {
     display: block;
     position: relative;
@@ -363,7 +411,8 @@ img {
 /*Header Styles */
 h1 {
   color: var(--color-h1);
-  margin: 0.625rem 0 00.625rem 0;
+  margin: 0.625rem 0 0.625rem 0;
+  padding: 0 0.625rem 0 0.625rem;
   font-family: var(--font-family);
   font-weight: var(--font-weight-title);
   font-size: var(--font-size-title);
@@ -414,35 +463,4 @@ li.skill-item {
   margin: 0;
 }
 
-body {
-  font-family: var(--body-font-family);
-  color: var(--body-color);
-  font-size: var(--font-size-body);
-  font-weight: var(--font-weight-body);
-  line-height: var(--font-line-height);
-  background-color: var(--color-bg);
-  margin: 0;
-  width: 100%;
-  text-align: left;
 
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  padding: var(--main-padding);
-  max-width: var(--main-max-width);
-  background-color: var(--main-bg-color);
-  color: var(--main-color);
-  line-height: var(--main-line-height);
-  flex: 1;
-}
-
-html {
-  background-color: var(--background-color);
-  font-family: var(--body-font-family);
-  scrollbar-width: thin;
-  height: 100%;
-  margin: 0;
-}
