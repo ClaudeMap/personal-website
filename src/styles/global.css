@@ -5,6 +5,7 @@
 
 /*Font - Calibre Font Family Definitions*/
 
+/* Base Font Family */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreRegular.otf) format("opentype");
@@ -19,6 +20,7 @@
   font-style: italic;
 }
 
+/* Medium weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreMedium.otf) format("opentype");
@@ -33,10 +35,11 @@
   font-style: italic;
 }
 
+/* Semibold weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreSemibold.otf) format("opentype");
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -47,6 +50,7 @@
   font-style: italic;
 }
 
+/* Bold weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreBold.otf) format("opentype");
@@ -61,6 +65,7 @@
   font-style: italic;
 }
 
+/* Black weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreBlack.otf) format("opentype");
@@ -75,6 +80,7 @@
   font-style: italic;
 }
 
+/* Light weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreLight.otf) format("opentype");
@@ -82,6 +88,7 @@
   font-style: normal;
 }
 
+/* Thin weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreThin.otf) format("opentype");
