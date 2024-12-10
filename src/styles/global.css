@@ -98,6 +98,7 @@
 
 :root {
   /* Fluid Typography */
+
   --fs-xxs: clamp(12px, 1vw, 14px); /* Extra-extra-small */
   --fs-xs: clamp(13px, 1vw, 15px); /* Extra-small */
   --fs-sm: clamp(14px, 1.1vw, 16px); /* Small */
@@ -107,6 +108,13 @@
   --fs-xxl: clamp(22px, 2vw, 26px); /* Extra-extra-large */
   --fs-heading: clamp(32px, 4vw, 48px); /* Large-headings */
   --fs-heading-lg: clamp(40px, 8vw, 80px); /* Extra-large-headings */
+  --f-line-height-body: clamp(1.4, 1.6vw, 1.8); /* Adjust line-height fluidly */
+  --f-line-height-heading: clamp(1.1, 1.3vw, 1.5); /* For headings */
+  --main-mobile-padding: clamp(
+    16px,
+    4vw,
+    24px
+  ); /* Fluid padding for main content */
 
   --font-family: "Calibre", sans-serif;
   --font-weight-body: 400;
@@ -116,11 +124,6 @@
   --font-weight-h3: 600;
   --font-weight-title: 700;
   --font-weight-li: 400;
-
-  --font-line-height: 1.25rem;
-  --font-line-height-h1: 1.625rem;
-  --font-line-height-h2: 1.625rem;
-  --font-line-height-h3: 1.625rem;
 
   /* Body and Text Colors*/
   --color-bg: #0a192f; /* Navy */
@@ -142,14 +145,11 @@
   --color-divider: #a8b2d1; /* Light Slate */
 
   /* Main Content Desktop */
-  --main-padding: 0 100px;
-  --main-max-width: 1024px;
   --main-bg-color: #0a192f; /* Navy */
   --main-color: #112240; /* light Navy */
   --main-line-height: 1.3rem;
 
   /* Main Content Mobile */
-  --main-mobile-padding: 0 25px;
   --main-mobile-max-width: 100%;
   --main-mobile-bg-color: #0a192f; /* Navy */
   --main-mobile-color: #112240; /* light Navy */
@@ -157,11 +157,10 @@
 }
 
 main {
-  padding: var(--main-padding);
-  max-width: var(--main-max-width);
+  padding: var(--main-mobile-padding);
   background-color: var(--main-bg-color);
   color: var(--main-color);
-  line-height: var(--main-line-height);
+  line-height: var(--f-line-height-body);
   flex: 1;
 }
 
@@ -170,7 +169,7 @@ body {
   color: var(--body-color);
   font-size: var(--fs-md);
   font-weight: var(--font-weight-body);
-  line-height: var(--font-line-height);
+  line-height: var(--f-line-height-body);
   background-color: var(--color-bg);
   margin: 0;
   width: 100%;
@@ -191,15 +190,15 @@ html {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 1rem;
+  padding: var(--fs-xs);
   text-decoration: none;
 }
 
 .styled-list {
   font-family: var(--font-family);
   font-weight: var(--font-weight-link);
-  display: flex;
   font-size: var(--fs-md);
+  display: flex;
   flex-direction: row;
   gap: 2rem;
   margin: 0px;
@@ -214,19 +213,19 @@ html {
   transition: color 0.3s ease;
 }
 
-.styled-list a:hover {
-  color: var(--color-secondary-text);
-}
-
 .styled-list a::before {
   content: "";
   position: absolute;
   width: 0;
   bottom: 0;
-  height: 2px;
+  height: 1px;
   left: 0;
   background-color: var(--color-link);
   transition: width 0.3s ease;
+}
+.styled-list a:hover {
+  color: var(--color-secondary-text);
+  transition: color 0.1s ease;
 }
 
 .styled-list a:hover::before {
@@ -251,17 +250,17 @@ html {
 /* Mobile Responsive Styles */
 @media screen and (max-width: 720px) {
   main {
-    padding: var(--main-mobile-padding);
+    padding: var(--fs-sm);
     max-width: var(--main-mobile-max-width);
     background-color: var(--main-mobile-bg-color);
-    line-height: var(--main-mobile-line-height);
+    line-height: var(--f-line-height-body);
     flex: 1;
     box-sizing: border-box;
   }
   .navigation {
     display: block;
     position: relative;
-    padding: 0;
+    padding: var(--fs-xs);
   }
 
   .styled-list a {
@@ -294,6 +293,7 @@ html {
     display: flex;
     opacity: 1;
     transform: translateY(0);
+    padding: 25px 0;
   }
 
   .hamburger {
@@ -391,7 +391,6 @@ img {
   align-items: center;
   gap: 0.625rem;
   padding: 15px;
-  max-width: var(--main-max-width);
   background-color: var(--main-bg-color);
   color: var(--color-h2);
 
@@ -405,7 +404,7 @@ h1 {
   font-family: var(--font-family);
   font-weight: var(--font-weight-title);
   font-size: var(--fs-sm), var(--fs-md);
-  line-height: 1.1;
+  line-height: var(--f-line-height-heading);
 }
 
 h2.big-heading {
@@ -414,7 +413,7 @@ h2.big-heading {
   font-family: var(--font-family);
   font-weight: var(--font-weight-h2);
   font-size: var(--fs-heading-lg);
-  line-height: 1.1;
+  line-height: var(--f-line-height-heading);
 }
 
 h3.big-heading {
@@ -423,7 +422,7 @@ h3.big-heading {
   font-family: var(--font-family);
   font-weight: var(--font-weight-h3);
   font-size: var(--fs-heading-lg);
-  line-height: 1.1;
+  line-height: var(--f-line-height-heading);
 }
 
 p {
@@ -432,7 +431,7 @@ p {
   font-weight: var(--font-weight-body);
   font-size: var(--fs-md);
   margin-top: 1.25rem;
-  line-height: var(--font-line-height);
+  line-height: var(--f-line-height-body);
 }
 
 ul.skills-grid {
