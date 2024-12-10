@@ -189,6 +189,9 @@ html {
   scrollbar-width: thin;
   scrollbar-color: var(--color-link) var(--color-bg);
 }
+h1, h2, h3 {
+  line-height: var(--f-line-height-heading);
+}
 
 /* Navigation Bar Styles*/
 .navigation {
@@ -320,7 +323,7 @@ html {
 }
 
 /* Desktop Styles */
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 728px) {
   .hamburger {
     display: none;
   }
@@ -340,10 +343,6 @@ html {
   color: var(--color-link);
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-.credit a:hover {
-  color: var(--color-secondary-text);
 }
 
 .credit a:hover {
@@ -409,7 +408,6 @@ h1 {
   font-family: var(--font-family);
   font-weight: var(--font-weight-h1);
   font-size: var(--fs-sm), var(--fs-md);
-  line-height: var(--f-line-height-heading);
 }
 
 h2.big-heading {
@@ -418,7 +416,6 @@ h2.big-heading {
   font-family: var(--font-family);
   font-weight: var(--font-weight-h2);
   font-size: var(--fs-heading-lg);
-  line-height: var(--f-line-height-heading);
 }
 
 h3.big-heading {
@@ -427,7 +424,6 @@ h3.big-heading {
   font-family: var(--font-family);
   font-weight: var(--font-weight-h3);
   font-size: var(--fs-heading-lg);
-  line-height: var(--f-line-height-heading);
 }
 
 p {
