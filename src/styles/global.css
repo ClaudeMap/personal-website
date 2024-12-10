@@ -126,10 +126,11 @@
   --font-family: "Calibre", sans-serif;
   --font-weight-body: 400;
   --font-weight-link: 500;
+  --font-weight-title: 700;
   --font-weight-h1: 900;
   --font-weight-h2: 700;
   --font-weight-h3: 600;
-  --font-weight-title: 700;
+
   --font-weight-li: 400;
 
   /* Body and Text Colors*/
@@ -154,13 +155,10 @@
   /* Main Content Desktop */
   --main-bg-color: #0a192f; /* Navy */
   --main-color: #112240; /* light Navy */
-  --main-line-height: 1.3rem;
 
   /* Main Content Mobile */
-  --main-mobile-max-width: 100%;
   --main-mobile-bg-color: #0a192f; /* Navy */
   --main-mobile-color: #112240; /* light Navy */
-  --main-mobile-line-height: 1.3rem;
 }
 
 main {
@@ -173,9 +171,9 @@ main {
 
 body {
   font-family: var(--body-font-family);
-  color: var(--body-color);
-  font-size: var(--fs-md);
   font-weight: var(--font-weight-body);
+  font-size: var(--fs-md);
+  color: var(--body-color);
   line-height: var(--f-line-height-body);
   background-color: var(--color-bg);
   margin: 0;
@@ -322,7 +320,7 @@ html {
 }
 
 /* Desktop Styles */
-@media screen and (min-width: 721px) {
+@media screen and (min-width: 720px) {
   .hamburger {
     display: none;
   }
@@ -409,7 +407,7 @@ h1 {
   color: var(--color-h1);
   margin: 0 0 0.875rem 0.25rem;
   font-family: var(--font-family);
-  font-weight: var(--font-weight-title);
+  font-weight: var(--font-weight-h1);
   font-size: var(--fs-sm), var(--fs-md);
   line-height: var(--f-line-height-heading);
 }
