@@ -97,6 +97,17 @@
 }
 
 :root {
+  /* Fluid Typography */
+  --fs-xxs: clamp(12px, 1vw, 14px); /* Extra-extra-small */
+  --fs-xs: clamp(13px, 1vw, 15px); /* Extra-small */
+  --fs-sm: clamp(14px, 1.1vw, 16px); /* Small */
+  --fs-md: clamp(16px, 1.2vw, 18px); /* Medium (body text) */
+  --fs-lg: clamp(18px, 1.5vw, 20px); /* Large */
+  --fs-xl: clamp(20px, 1.5vw, 20px); /* Extra-large */
+  --fs-xxl: clamp(22px, 2vw, 26px); /* Extra-extra-large */
+  --fs-heading: clamp(32px, 4vw, 48px); /* Large-headings */
+  --fs-heading-lg: clamp(40px, 8vw, 80px); /* Extra-large-headings */
+
   --font-family: "Calibre", sans-serif;
   --font-weight-body: 400;
   --font-weight-link: 500;
@@ -105,15 +116,7 @@
   --font-weight-h3: 600;
   --font-weight-title: 700;
   --font-weight-li: 400;
-  --font-size-body: 1rem;
-  --font-size-link: 1rem;
-  --font-size-h1: 3rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.5rem;
-  --font-size-h3-big: 2rem;
 
-  --font-size-title: 2.25rem;
-  --font-size-li: 1rem;
   --font-line-height: 1.25rem;
   --font-line-height-h1: 1.625rem;
   --font-line-height-h2: 1.625rem;
@@ -165,7 +168,7 @@ main {
 body {
   font-family: var(--body-font-family);
   color: var(--body-color);
-  font-size: var(--font-size-body);
+  font-size: var(--fs-md);
   font-weight: var(--font-weight-body);
   line-height: var(--font-line-height);
   background-color: var(--color-bg);
@@ -179,11 +182,8 @@ body {
 }
 
 html {
-  background-color: var(--background-color);
-  font-family: var(--body-font-family);
   scrollbar-width: thin;
-  height: 100%;
-  margin: 0;
+  scrollbar-color: var(--color-link) var(--color-bg);
 }
 
 /* Navigation Bar Styles*/
@@ -196,20 +196,18 @@ html {
 }
 
 .styled-list {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-link);
   display: flex;
-  font-size: var(--font-size-link);
+  font-size: var(--fs-md);
   flex-direction: row;
   gap: 2rem;
-  padding: 0px;
   margin: 0px;
   list-style: none;
 }
 
 .styled-list a {
   text-decoration: none;
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-link);
-  font-size: var(--font-size-link);
   color: var(--color-link);
   position: relative;
   padding: 0.25rem 0;
@@ -263,6 +261,7 @@ html {
   .navigation {
     display: block;
     position: relative;
+    padding: 0;
   }
 
   .styled-list a {
@@ -285,7 +284,6 @@ html {
     width: 100%;
     background-color: var(--color-section-bg);
     z-index: 1000;
-    padding: 1rem;
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -332,7 +330,7 @@ html {
 .credit a {
   font-family: var(--font-family);
   font-weight: var(--font-weight-link);
-  font-size: var(--font-size-link);
+  font-size: var(--fs-xxs);
   position: relative;
   color: var(--color-link);
   text-decoration: none;
@@ -343,15 +341,6 @@ html {
   color: var(--color-secondary-text);
 }
 
-.credit a {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-link);
-  font-size: var(--font-size-link);
-  position: relative;
-  color: var(--color-link);
-  text-decoration: none;
-}
-
 .credit a:hover {
   color: var(--color-secondary-text);
 }
@@ -359,7 +348,7 @@ html {
 /* Blog Styling */
 ul li a {
   font-family: var(--font-family);
-  font-size: var(--font-size-link);
+  font-size: var(--fs-md);
   font-weight: var(--font-weight-body);
   text-decoration: none;
   color: var(--color-link);
@@ -394,6 +383,7 @@ img {
   margin: 0;
   padding: 0.625rem;
   text-align: center;
+  font-size: var(--fs-xxs);
 }
 .custom_footer {
   display: flex;
@@ -411,11 +401,11 @@ img {
 /*Header Styles */
 h1 {
   color: var(--color-h1);
-  margin: 0.625rem 0 0.625rem 0;
+  margin: 0 0 0.875rem 0.25rem;
   font-family: var(--font-family);
   font-weight: var(--font-weight-title);
-  font-size: var(--font-size-title);
-  line-height: var(--font-line-height-h1);
+  font-size: var(--fs-sm), var(--fs-md);
+  line-height: 1.1;
 }
 
 h2.big-heading {
@@ -423,8 +413,8 @@ h2.big-heading {
   margin: 0.625rem 0 0.625rem 0;
   font-family: var(--font-family);
   font-weight: var(--font-weight-h2);
-  font-size: var(--font-size-h2);
-  line-height: var(--font-line-height-h2);
+  font-size: var(--fs-heading-lg);
+  line-height: 1.1;
 }
 
 h3.big-heading {
@@ -432,15 +422,15 @@ h3.big-heading {
   margin: 0;
   font-family: var(--font-family);
   font-weight: var(--font-weight-h3);
-  font-size: var(--font-size-h3-big);
-  line-height: var(--font-line-height-h3);
+  font-size: var(--fs-heading-lg);
+  line-height: 1.1;
 }
 
 p {
   color: var(--color-secondary-text);
   font-family: var(--font-family);
   font-weight: var(--font-weight-body);
-  font-size: var(--font-size-body);
+  font-size: var(--fs-md);
   margin-top: 1.25rem;
   line-height: var(--font-line-height);
 }
@@ -458,6 +448,6 @@ li.skill-item {
   color: var(--color-secondary-text);
   font-family: var(--font-family);
   font-weight: var(--font-weight-li);
-  font-size: var(--font-size-li);
+  font-size: var(--fs-md);
   margin: 0;
 }
