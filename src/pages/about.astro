@@ -1,9 +1,6 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
-const pageTitle = "Claude Mapara";
+import BaseLayout from "../layout/BaseLayout.astro";
 
 const identity = {
   firstName: "Claude",
@@ -29,49 +26,18 @@ const technicalSkills = {
 };
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'
-      rel='stylesheet'
-    />
-    <link
-      href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'
-      rel='stylesheet'
-    />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style></style>
-  </head>
-  <body>
-    <main>
-      <Header />
-      <h1>Hi, my name is</h1>
-      <h2 class='big-heading'>{pageTitle}.</h2>
-      <h3 class='big-heading'>I build things for the web.</h3>
-      <p>
-        I'm a software engineer based in London, specializing in building
-        scalable and reliable cloud-based solutions using mostly AWS and
-        occasionally other providers. Currently, I'm focusing on building...
-        Having worked as an engineer for 4+ years in London, I have built an
-        array of knowledge over {technicalSkills.Languages}.
-      </p>
-      <p>
-        I've used a number of frameworks and tools such <ul class='skills-grid'>
-          {
-            technicalSkills.Frameworks.map((framework) => (
-              <li class='skill-item'>{framework}</li>
-            ))
-          }
-        </ul>
-      </p>
-    </main>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle='Claude Mapara'>
+  <h1>Hi, my name is</h1>
+  <h2 class="big-heading">Claude</h2>
+  <h3 class='big-heading'>I build things for the web.</h3>
+  <p class="p-main">
+    I'm a software engineer based in London, specializing in building and
+    designing scalable cloud-based experiences. Currently, I'm focusing on
+    building secure distributed systems at <a
+      href='https://www.ibm.com/uk-en'
+      target='_blank'
+      rel='noopner noreferrer'
+      >IBM</a
+    >
+  </p>
+</BaseLayout>
