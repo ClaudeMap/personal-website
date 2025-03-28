@@ -143,12 +143,12 @@
   --color-border: #a8b2d1; /* Light Slate */
 
   /* Header Colors*/
-  --color-h1: #e6f1ff; /* White */
+  --color-h1: #64ffda; /* Green  */
   --color-h2: #ccd6f6; /* Lightest Slate */
   --color-h3: #8892b0; /* Slate */
 
   /* Link and Interactive States */
-  --color-link-hover: #ccd6f6; /* Slightly darker Green for hover */
+  --color-link-hover: #ccd6f6; /* Lightest Slate */
   /* Border and Divider Colors */
   --color-divider: #a8b2d1; /* Light Slate */
 
@@ -189,7 +189,9 @@ html {
   scrollbar-width: thin;
   scrollbar-color: var(--color-link) var(--color-bg);
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: var(--f-line-height-heading);
 }
 
@@ -335,6 +337,13 @@ h1, h2, h3 {
 }
 
 /*Credit Link Style*/
+.credit {
+  margin: 0;
+  padding: 0.625rem;
+  text-align: center;
+  font-size: var(--fs-xxs);
+}
+
 .credit a {
   font-family: var(--font-family);
   font-weight: var(--font-weight-link);
@@ -347,6 +356,32 @@ h1, h2, h3 {
 
 .credit a:hover {
   color: var(--color-secondary-text);
+}
+
+.p-main a {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-body);
+  position: relative;
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.p-main a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  height: 1px;
+  left: 0;
+  background-color: var(--color-link);
+  transition: width 0.2s ease;
+}
+
+.p-main a:hover {
+  transition: color 0.1s ease;
+}
+.p-main a:hover::before {
+  width: 100%;
 }
 
 /* Blog Styling */
@@ -383,12 +418,6 @@ img {
   display: block;
 }
 
-.credit {
-  margin: 0;
-  padding: 0.625rem;
-  text-align: center;
-  font-size: var(--fs-xxs);
-}
 .custom_footer {
   display: flex;
   flex-direction: column;
