@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
 const allPosts = Object.values(
   import.meta.glob("./posts/*.md", { eager: true })
 );
@@ -11,9 +12,7 @@ const allPosts = Object.values(
   <ul>
     {
       allPosts.map((post: any) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
+        <BlogPost url={post.url} title={post.frontmatter.title} />
       ))
     }
   </ul>
