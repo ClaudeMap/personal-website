@@ -1,32 +1,36 @@
 ---
 import BaseLayout from "../../layout/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
+
 export async function getStaticPaths() {
   const allPosts = Object.values(
     import.meta.glob("../posts/*.md", { eager: true })
   );
-  return [
-    { params: { tag: "dsa" }, props: { posts: allPosts } },
-    { params: { tag: "resources" }, props: { posts: allPosts } },
-    { params: { tag: "projects" }, props: { posts: allPosts } },
-    { params: { tag: "random thoughts" }, props: { posts: allPosts } },
-    { params: { tag: "building in public" }, props: { posts: allPosts } },
-    { params: { tag: "concepts" }, props: { posts: allPosts } },
+
+  const uniqueTags = [
+    ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
   ];
+  
+  return uniqueTags.map((tag) => {
+    const filterPosts = allPosts.filter((post: any) =>
+      post.frontmatter.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filterPosts },
+    };
+  });
 }
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const filteredPosts = posts.filter((post: any) =>
-  post.frontmatter.tags?.includes(tag)
-);
 ---
 
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
     {
-      filteredPosts.map((post: any) => (
+      posts.map((post: any) => (
         <BlogPost url={post.url} title={post.frontmatter.title} />
       ))
     }
