@@ -480,3 +480,27 @@ li.skill-item {
   font-size: var(--fs-md);
   margin: 0;
 }
+
+.tag a{
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-body);
+  position: relative;
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.tag a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  height: 1px;
+  left: 0;
+  background-color: var(--color-link);
+  transition: color 0.2s ease;
+}
+
+.tag a:hover {
+  color: var(--color-secondary-text);
+}
