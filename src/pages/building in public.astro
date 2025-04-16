@@ -2,10 +2,12 @@
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
 const pageTitle = 'Building in public';
+const heading = "Building in public";
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2 class='big-heading'>Building in public</h2>
+  <h2 class='big-heading'>{heading}</h2>
   <ul>
     <li><a href='/posts/post-1'>hello_world</a></li>
     <li><a href='/posts/post-2'>30 days of JS</a></li>
