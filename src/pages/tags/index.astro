@@ -1,0 +1,15 @@
+---
+import "../../styles/global.css";
+import BaseLayout from "../../layout/BaseLayout.astro";
+const pageTitle = "Tag Index";
+const tags = ["dsa", "building in public", "concepts", "random thoughts"];
+---
+
+
+<BaseLayout pageTitle={pageTitle}>
+	<ul>
+		{
+			tags.map((tag) => {<li>{tag}</li>})
+		}
+	</ul>
+</BaseLayout> 
