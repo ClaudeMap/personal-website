@@ -27,6 +27,8 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
+  <h2 class='big-heading'>{tag}</h2>
+
   <p>Posts tagged with {tag}</p>
   <ul>
     {
