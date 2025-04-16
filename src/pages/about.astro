@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
+const pageTitle = "Claude Mapara";
+
 
 const identity = {
   firstName: "Claude",
@@ -26,7 +28,7 @@ const technicalSkills = {
 };
 ---
 
-<BaseLayout pageTitle='Claude Mapara'>
+<BaseLayout pageTitle={pageTitle}>
   <h1>Hi, my name is</h1>
   <h2 class="big-heading">Claude</h2>
   <h3 class='big-heading'>I build things for the web.</h3>

@@ -2,12 +2,13 @@
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
+const pageTitle = "Blog";
 const allPosts = Object.values(
   import.meta.glob("./posts/*.md", { eager: true })
 );
 ---
 
-<BaseLayout pageTitle='Blog'>
+<BaseLayout pageTitle={pageTitle}>
   <h2 class='big-heading'>All things engineering & tech Blog</h2>
   <ul>
     {
