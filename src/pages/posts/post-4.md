@@ -7,7 +7,7 @@ description: Thoughts that come into my mind, when building, reading or waiting!
 image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "The Astro logo on a dark background with rainbow rays."
-tags: ["random thoughts"]
+tags: ["Random thoughts"]
 ---
 
 ## Random Thoughts

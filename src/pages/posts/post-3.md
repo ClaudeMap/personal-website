@@ -7,7 +7,7 @@ description: I had some challenges, but once I learned these concepts, things be
 image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "The Astro logo on a dark background with rainbow rays."
-tags: ["dsa", "concepts"]
+tags: ["DSA", "Concepts"]
 ---
 
 ## 8 core concepts to know

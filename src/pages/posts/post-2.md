@@ -6,7 +6,7 @@ pubDate: 2024-11-15
 description: This post is going to be about Learning JavaScript concepts by tackling leetcode
 image:
   url: "https://docs.astro.build/assets/arc.webp"
-tags: ["dsa", "building in public"]
+tags: ["DSA", "Building in public"]
 ---
 
 ## 30 days of JavaScript
