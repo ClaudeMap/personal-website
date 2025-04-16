@@ -11,13 +11,14 @@ const tags = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div>
+  <h2 class='big-heading'>Tags</h2>
+  <ul>
     {
       tags.map((tag) => (
-        <p>
+        <p class='tag'>
           <a href={`/tags/${tag}`}>{tag}</a>
         </p>
       ))
     }
-  </div>
+  </ul>
 </BaseLayout>
