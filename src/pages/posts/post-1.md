@@ -6,7 +6,7 @@ pubDate: 2024-11-15
 description: Introduction to my blog
 image:
 	url: 'https://docs.astro.build/assets/rose.webp'
-tags: ["Building in public"]
+tags: ["building in public"]
 ---
 
 ## What's going on over here?
