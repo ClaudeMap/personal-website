@@ -2,14 +2,20 @@
 import "../../styles/global.css";
 import BaseLayout from "../../layout/BaseLayout.astro";
 const pageTitle = "Tag Index";
-const tags = ["dsa", "building in public", "concepts", "random thoughts"];
+const allPosts = Object.values(
+  import.meta.glob("../posts/*.md", { eager: true })
+);
+const tags = [
+  ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+];
 ---
 
-
 <BaseLayout pageTitle={pageTitle}>
-	<ul>
-		{
-			tags.map((tag) => {<li>{tag}</li>})
-		}
-	</ul>
-</BaseLayout> 
+  <ul>
+    {
+      tags.map((tag) => {
+        <li>{tag}</li>;
+      })
+    }
+  </ul>
+</BaseLayout>
