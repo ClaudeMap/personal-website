@@ -8,5 +8,6 @@ import BaseLayout from "../layout/BaseLayout.astro";
     <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
     <p>{frontmatter.description}</p>
     <p>Written by {frontmatter.author}</p>
+    <h2>{frontmatter.heading}</h2>
     <slot />
 </BaseLayout>
