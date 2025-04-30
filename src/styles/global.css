@@ -160,6 +160,29 @@
   --main-mobile-bg-color: #0a192f; /* Navy */
   --main-mobile-color: #112240; /* light Navy */
 }
+:root.dark {
+  --color-bg: #000000; 
+  --color-section-bg: #0a0a0a; 
+  --color-text: #f1f1f1; 
+  --color-secondary-text: #b0b0b0; 
+  --color-title: #ffffff; 
+  --color-link: #64ffda; 
+  --color-border: #333333; 
+
+  --color-h1: #64ffda;
+  --color-h2: #f1f1f1;
+  --color-h3: #b0b0b0;
+
+  --color-link-hover: #ffffff;
+  --color-divider: #333333;
+
+  --main-bg-color: #000000;
+  --main-color: #0a0a0a;
+
+  --main-mobile-bg-color: #000000;
+  --main-mobile-color: #0a0a0a;
+}
+
 
 main {
   padding: var(--main-mobile-padding);
@@ -170,10 +193,10 @@ main {
 }
 
 body {
-  font-family: var(--body-font-family);
+  font-family: var(--font-family);
   font-weight: var(--font-weight-body);
   font-size: var(--fs-md);
-  color: var(--body-color);
+  color: var(--color-text);
   line-height: var(--f-line-height-body);
   background-color: var(--color-bg);
   margin: 0;
@@ -438,6 +461,13 @@ h1 {
   font-weight: var(--font-weight-h1);
   font-size: var(--fs-sm), var(--fs-md);
 }
+ h2 {
+  color: var(--color-h2);
+  /* margin: 0 0 0.875rem 0.25rem; */
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-h2);
+  font-size: var(--fs-sm), var(--fs-md);
+ }
 
 h2.big-heading {
   color: var(--color-h2);
@@ -445,6 +475,15 @@ h2.big-heading {
   font-family: var(--font-family);
   font-weight: var(--font-weight-h2);
   font-size: var(--fs-heading-lg);
+}
+
+
+h3 {
+  color: var(--color-h3);
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-h3);
+  font-size: var(--fs-sm);
 }
 
 h3.big-heading {
@@ -481,7 +520,7 @@ li.skill-item {
   margin: 0;
 }
 
-.tag a{
+.tag a {
   font-family: var(--font-family);
   font-weight: var(--font-weight-body);
   position: relative;
@@ -503,4 +542,34 @@ li.skill-item {
 
 .tag a:hover {
   color: var(--color-secondary-text);
+}
+
+#themeToggle {
+  border: 0;
+  background: none;
+}
+
+.sun {
+  fill: var(--color-link);
+}
+
+.moon {
+  fill: transparent;
+}
+
+:global(.dark) .sun {
+  fill: transparent;
+}
+
+:global(.dark) .moon {
+  fill: white;
+}
+
+html.dark {
+  background-color: black;
+  color: #fff;
+}
+
+.dark .navigation-links a {
+  color: #fff;
 }
