@@ -1,6 +1,7 @@
 ---
 import "../../styles/global.css";
 import BaseLayout from "../../layout/BaseLayout.astro";
+import Greeting from "../../components/Greeting";
 const pageTitle = "Tag Index";
 const allPosts = Object.values(
   import.meta.glob("../posts/*.md", { eager: true })
@@ -21,4 +22,5 @@ const tags = [
       ))
     }
   </ul>
+  <h3><Greeting client:load messages={["Hi", "Bonjour", "Sawubona", "Hey there"]} /></h3>
 </BaseLayout>
