@@ -2,44 +2,6 @@
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
 const pageTitle = "Claude Mapara";
-
-
-const identity = {
-  firstName: "Claude",
-  country: "United Kingdom",
-  occupation: "software engineer",
-  hobbies: ["exercise, travelling, sports, fashion, DIY"],
-};
-
-const technicalSkills = {
-  Languages: ["JavaScript ", "Java ", "HTML/CSS ", "TypeScript ", "JSON "],
-  Frameworks: [
-    "React",
-    "Node.js",
-    "REST",
-    "HTTPS",
-    "DNS",
-    "AWS",
-    "Git",
-    "Bitbucket",
-  ],
-  Databases: ["SQL(MySQL, Oracle)", "NoSQL (DynamoDB, MongoDB)"],
-  Other: ["Postman", "Jest"],
-};
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h1>Hi, my name is</h1>
-  <h2 class="big-heading">Claude</h2>
-  <h3 class='big-heading'>I build things for the web.</h3>
-  <p class="p-main">
-    I'm a software engineer based in London, specializing in building and
-    designing scalable cloud-based experiences. Currently, I'm focusing on
-    building secure distributed systems at <a
-      href='https://www.ibm.com/uk-en'
-      target='_blank'
-      rel='noopner noreferrer'
-      >IBM</a
-    >
-  </p>
-</BaseLayout>
+<BaseLayout pageTitle={pageTitle} />

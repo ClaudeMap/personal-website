@@ -1,9 +1,27 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
-const pageTitle = "Home";
+const pageTitle = "Claude Mapara";
+
+const identity = {
+  firstName: "Claude",
+  location: "London",
+  occupation: "software engineer",
+  company: "IBM",
+};
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-
-</BaseLayout> 
+  <h1>Hi, my name is</h1>
+  <h2 class='big-heading'>{identity.firstName}</h2>
+  <h3 class='big-heading'>I build things for the web.</h3>
+  <p class='p-main'>
+    I'm a {identity.occupation} based in {identity.location}, specializing in
+    building and designing scalable cloud-based experiences. Currently, I'm
+    focusing on building secure distributed systems at <a
+      href='https://www.ibm.com/uk-en'
+      target='_blank'
+      rel='noopner noreferrer'>{identity.company}</a
+    >
+  </p>
+</BaseLayout>
