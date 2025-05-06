@@ -3,19 +3,36 @@ import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 const pageTitle = "Claude Mapara";
-const heading = "All things engineering & tech"
+const heading = "All things engineering & tech";
 const allPosts = Object.values(
   import.meta.glob("./posts/*.md", { eager: true })
 );
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2 class='big-heading'>{heading}</h2>
-  <ul>
-    {
-      allPosts.map((post: any) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
-      ))
-    }
-  </ul>
+  <section class='posts'>
+    <h3>{heading}</h3>
+    <table class='blog-table'>
+      <tbody>
+        {
+          allPosts.map((post: any) => (
+            <tr class='blog-row'>
+              <td class='post-title'>
+                <a href={post.url}>{post.frontmatter.title}</a>   
+              </td>
+              <td class='post-date'>
+                <time datetime={post.frontmatter.date}>
+                  {new Date(post.frontmatter.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </time>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </section>
 </BaseLayout>
