@@ -130,37 +130,41 @@
 
   /* Body and Text Colors*/
   --color-bg: #0a192f; /* Navy */
-  --background-image: 
-  radial-gradient(at 20% 100%, #1a2a4f, transparent 40%),
-  radial-gradient(at 70% 120%, #0f4c75, transparent 50%),
-  radial-gradient(at 40% 80%, #3282b8, transparent 30%),
-  radial-gradient(at 80% 40%, #5e60ce, transparent 40%),
-  radial-gradient(at 90% 10%, #6930c3, transparent 40%),
-  linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9)),
-  linear-gradient(to top, transparent, #0a192f 40%),
-  linear-gradient(45deg, transparent, #3a0ca3 15%, transparent 30%, #4361ee 50%, transparent),
-  linear-gradient(to bottom, #0a192f, #1a1f38 60%, #112240 80%, transparent),
-  radial-gradient(at 10% 0%, #3a0ca3, transparent 30%),
-  radial-gradient(at 85% 0%, #4361ee, transparent 30%),
-  radial-gradient(at 95% 0%, #4cc9f0, transparent 20%);
+  --background-image: radial-gradient(at 20% 100%, #1a2a4f, transparent 40%),
+    radial-gradient(at 70% 120%, #0f4c75, transparent 50%),
+    radial-gradient(at 40% 80%, #3282b8, transparent 30%),
+    radial-gradient(at 80% 40%, #5e60ce, transparent 40%),
+    radial-gradient(at 90% 10%, #6930c3, transparent 40%),
+    linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9)),
+    linear-gradient(to top, transparent, #0a192f 40%),
+    linear-gradient(
+      45deg,
+      transparent,
+      #3a0ca3 15%,
+      transparent 30%,
+      #4361ee 50%,
+      transparent
+    ),
+    linear-gradient(to bottom, #0a192f, #1a1f38 60%, #112240 80%, transparent),
+    radial-gradient(at 10% 0%, #3a0ca3, transparent 30%),
+    radial-gradient(at 85% 0%, #4361ee, transparent 30%),
+    radial-gradient(at 95% 0%, #4cc9f0, transparent 20%);
 
-  
   --color-section-bg: #112240; /* Light Navy */
-  --color-text: #ccd6f6; /* Lightest Slate */
-  --color-secondary-text: #8892b0; /* Slate */
-  --color-title: #e6f1ff; /* White */
-  --color-link: #64ffda; /* Green */
-  --color-border: #a8b2d1; /* Light Slate */
+  --color-text: #c9d4f5; /* Mist Blue – Main body text */
+  --color-secondary-text: #a4b8dd; /* Cool Lavender – Subtext, paragraphs */
+  --color-title: #e6f1ff; /* Soft White – For main headings */
 
   /* Header Colors*/
-  --color-h1: #64ffda; /* Green  */
-  --color-h2: #ccd6f6; /* Lightest Slate */
-  --color-h3: #8892b0; /* Slate */
+  --color-h1: #64ffda; /* Aqua Green – Matches link for top-level headings */
+  --color-h2: #b8c0ff; /* Violet Mist – Used for second-level headings */
+  --color-h3: #b3c2f2;                 /* Frost Blue – Elegant for h3/big-heading */
 
   /* Link and Interactive States */
-  --color-link-hover: #ccd6f6; /* Lightest Slate */
+  --color-link: #64ffda; /* Aqua Green – Primary accent link color */
+  --color-link-hover: #8be9ff; /* Bright Cyan – Hover state for links */
   /* Border and Divider Colors */
-  --color-divider: #a8b2d1; /* Light Slate */
+  --color-divider: #33416a; /* Twilight Slate – Table or section dividers */
 
   /* Main content */
   --main-desktop-margin-inline: auto;
@@ -295,6 +299,43 @@ h3 {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.blog-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.blog-row {
+  /* border-bottom: 1.5px solid var(--color-divider); */
+  padding: 1rem 0;
+}
+
+.posts {
+  max-width: 700px;
+  width: fit-content;
+  margin: auto;
+}
+
+.post-title a {
+  border-bottom: 2.5px solid var(--color-divider);
+  font-size: var(--fs-md);
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: var(--font-weight-link);
+}
+
+.post-title a:hover {
+  color: var(--color-link-hover);
+}
+
+.post-date {
+  text-align: right;
+  font-size: var(--fs-md);
+  color: var(--color-secondary-text);
+  white-space: nowrap;
+}
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 720px) {
   main {
@@ -393,6 +434,9 @@ h3 {
 
 .credit a:hover {
   color: var(--color-secondary-text);
+}
+.p-main {
+  color: #a4b8dd;
 }
 
 .p-main a {
@@ -494,7 +538,7 @@ h3 {
   margin: 0;
   font-family: var(--font-family);
   font-weight: var(--font-weight-h3);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-lg);
 }
 
 h3.big-heading {
@@ -529,6 +573,20 @@ li.skill-item {
   font-weight: var(--font-weight-li);
   font-size: var(--fs-md);
   margin: 0;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  width: 1ch;
+  color: var(--color-link);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .tag a {
