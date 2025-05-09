@@ -2,7 +2,7 @@
 layout: ../../layout/MarkDownPostLayout.astro
 title: Hello_world
 author: Claude
-pubDate: 2024-11-15
+pubDate: 2024-9-12
 description: Introduction to my blog
 heading: What's going on over here?
 image:
