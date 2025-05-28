@@ -254,27 +254,29 @@ h3 {
   margin-right: 1.5em;
   text-decoration: none;
   background-color: #1119;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   border-radius: 2em;
+  transition: background-color 0.3s ease, backdrop-filter 03s ease;
+  z-index: 999;
 }
 
 .styled-list {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-link);
-  font-size: var(--fs-md);
   display: flex;
   flex-direction: row;
   gap: 2rem;
   margin: 0px;
+  padding: 0;
   list-style: none;
 }
 
 .styled-list a {
+  font-weight: var(--font-weight-link);
+  font-size: var(--fs-md);
   text-decoration: none;
   color: var(--color-link);
   position: relative;
-  padding: 0.25rem 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
 .styled-list a::before {
