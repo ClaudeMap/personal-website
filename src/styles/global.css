@@ -220,6 +220,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -357,6 +358,11 @@ h3 {
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 720px) {
+  body,
+  html {
+    overscroll-behavior: none;
+  }
+
   main {
     padding: var(--fs-sm);
     max-width: var(--main-mobile-max-width);
@@ -364,7 +370,7 @@ h3 {
     flex: 1;
     box-sizing: border-box;
   }
-  
+
   body.menu-open-blur {
     overflow: hidden;
     scrollbar-width: none;
