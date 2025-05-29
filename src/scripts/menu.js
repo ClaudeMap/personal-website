@@ -15,5 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         hamburger.classList.remove("active");
       });
     });
+
+    document.addEventListener("click", (event) => {
+      const isClickInsideMenu = navigationList.contains(event.target);
+      const isClickOnHamburger = hamburger.contains(event.target);
+
+      if (!isClickInsideMenu && !isClickOnHamburger) {
+        navigationList.classList.remove("expanded");
+        hamburger.classList.remove("active");
+      }
+    });
   }
 });
