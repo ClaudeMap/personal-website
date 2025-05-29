@@ -215,6 +215,13 @@ main {
   /* flex: 1; */
 }
 
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: var(--font-family);
   font-weight: var(--font-weight-body);
@@ -357,6 +364,17 @@ h3 {
     flex: 1;
     box-sizing: border-box;
   }
+  
+  body.menu-open-blur {
+    overflow: hidden;
+    scrollbar-width: none;
+  }
+
+  body.menu-open-blur::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
   .navigation {
     display: block;
     position: relative;
@@ -397,7 +415,7 @@ h3 {
     opacity: 0;
     pointer-events: none;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .styled-list.expanded {
@@ -411,8 +429,8 @@ h3 {
   .styled-list li {
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .styled-list.expanded li:nth-child(1) {
@@ -446,7 +464,9 @@ h3 {
   .styled-list.expanded li {
     pointer-events: auto;
   }
-
+  body.menu-open-blur {
+    overflow: hidden;
+  }
   body.menu-open-blur::before {
     content: "";
     position: fixed;
