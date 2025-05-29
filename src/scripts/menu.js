@@ -4,9 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".styled-list a");
 
   const closeMenu = () => {
+    if (!navigationList.classList.contains("expanded")) return;
     navigationList.classList.remove("expanded");
     hamburger.classList.remove("active");
-    document.body.classList.remove("menu-open-blur");
+
+    const onTransitionEnd = (e) => {
+      if (e.propertyName === "transform") {
+        document.body.classList.remove("menu-open-blur");
+        navigationList.removeEventListener("transitionend", onTransitionEnd);
+      }
+    };
+
+    navigationList.addEventListener("transitionend", onTransitionEnd);
   };
 
   if (hamburger && navigationList) {
