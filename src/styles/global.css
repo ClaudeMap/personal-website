@@ -401,8 +401,9 @@ h3 {
   }
 
   .resume-button:hover {
-    background-color: var(--color-link);
-    color: var(--main-mobile-bg-color); /* or white, depending on contrast */
+    background-color:var(--color-link-hover);
+;
+    color: var(--main-mobile-bg-color); 
   }
 
   .styled-list a {
@@ -643,6 +644,8 @@ ul li a:hover {
 .social-links {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .social-link {
   display: flex;
