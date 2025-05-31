@@ -212,7 +212,7 @@ main {
   width: var(--main-desktop-width);
   color: var(--main-color);
   line-height: var(--f-line-height-body);
-  /* flex: 1; */
+  flex: 1;
 }
 
 html,
