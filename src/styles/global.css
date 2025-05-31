@@ -455,7 +455,7 @@ h3 {
     padding: 3px 20px 10px;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     position: fixed;
     top: 0;
     right: 0;
@@ -478,7 +478,6 @@ h3 {
     transform: translateX(0) scale(1);
     opacity: 1;
     pointer-events: auto;
-    align-items: center;
   }
 
   .styled-list.expanded .nav-divider {
