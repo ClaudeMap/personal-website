@@ -976,16 +976,20 @@ li.skill-item {
 .cursor {
   display: inline-block;
   margin-left: 4px;
-  width: 1ch;
   color: var(--color-link);
-  animation: blink 1s step-start infinite;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.cursor.blink {
+  animation: blink 1.2s ease-in-out infinite;
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
+
 
 .tag a {
   font-family: var(--font-family);
