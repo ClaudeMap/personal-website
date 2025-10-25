@@ -2,6 +2,49 @@
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
 const pageTitle = "Claude Mapara";
+
+const identity = {
+  firstName: "Claude",
+  location: "London",
+  occupation: "software engineer",
+  company: "IBM",
+};
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout pageTitle={pageTitle}>
+  <section>
+    <p class='p-main'>
+      I’m a {identity.occupation} with a background in building secure, scalable
+      systems across full-stack platforms. I’ve shipped products from 0 → 1 across
+      a range of settings, from large corporations to startups and small businesses.
+      You'll find me working across backend development (optimising for performance,
+      reliability, and scale) and frontend interfaces (helping design intuitive,
+      low-friction UX for idea-to-deploy experiences), using modern frameworks to
+      turn ideas into working apps.
+    </p>
+    <p class='p-main'>
+      Currently, I'm at <a
+        href='https://www.ibm.com/uk-en'
+        target='_blank'
+        rel='noopner noreferrer'>{identity.company}</a
+      >, building a platform enabling access for distributed teams. I contribute
+      to the design and delivery of backend services, and help improve team
+      workflows, focusing on scalable service logic and clear system interfaces
+      across distributed environments. <p class='p-main'>
+        I care about writing clear, maintainable code, building systems that
+        hold up under pressure, and simplifying things that don’t need to be
+        complicated. In my spare time, I can be found working out, trying out
+        new restaurants, attending the occasional music or art fair, or
+        researching tech I may or may not use.
+      </p>
+    </p>
+
+    <p class='p-main'>
+      If any of that resonates and you’d like to chat about work, projects, or
+      anything in between, I’m just an <a
+        href='mailto:claude.mapara@hotmail.co.uk'
+        aria-label='Email'>email away</a
+      >.
+    </p>
+  </section>
+</BaseLayout>
