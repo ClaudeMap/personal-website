@@ -3,55 +3,16 @@ const { url } = Astro.request;
 const currentPath = new URL(url).pathname;
 ---
 
-<div class='navigation-links'>
-  <nav>
-    <ol class='styled-list'>
-      <li><a href='/' class={currentPath === "/" ? "active" : ""}>Home</a></li>
-      <li>
-        <a href='/about/' class={currentPath === "/about/" ? "active" : ""}
-          >About</a>
-      </li>
-      <li>
-        <a href='/projects' class={currentPath === "/projects" ? "active" : ""}
-          >Projects</a>
-      </li>
-
-      <!-- Divider -->
-      <li class='nav-divider' aria-hidden='true'></li>
-      <!-- Resume -->
-      <li>
-        <a
-          class='resume-button'
-          href='/downloads/Resume.pdf'
-          download
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Resume
-        </a>
-      </li>
-      <!-- Social Section -->
-      <li class='social-nav'>
-        <div class='social-links'>
-          <a
-            href='https://github.com/ClaudeMap'
-            target='_blank'
-            aria-label='GitHub'
-          >
-            <img src='/icons/Github.svg' alt='GitHub' /></a
-          >
-          <a
-            href='https://linkedin.com/in/claude-m-b24795222'
-            target='_blank'
-            aria-label='LinkedIn'
-          >
-            <img src='/icons/Linkedin.svg' alt='LinkedIn' /></a
-          >
-          <a href='mailto:claude.mapara@hotmail.co.uk' aria-label='Email'>
-            <img src='/icons/Email.svg' alt='Email' />
-          </a>
-        </div>
-      </li>
-    </ol>
-  </nav>
+<h2><a href='/' class={currentPath === "/" ? "active" : ""}>Home</a></h2>
+<div>
+  <a href='/about/' class={currentPath === "/about/" ? "active" : ""}>/about</a>
+  <a href='/projects' class={currentPath === "/projects" ? "active" : ""}
+    >/projects</a
+  >
+  <a
+    href='/downloads/Resume.pdf'
+    download
+    target='_blank'
+    rel='noopener noreferrer'>Resume</a
+  >
 </div>
