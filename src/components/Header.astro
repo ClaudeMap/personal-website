@@ -1,14 +1,10 @@
 ---
-import Hamburger from "../components/Hamburger.astro";
 import Navigation from "../components/Navigation.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+const { url } = Astro.request;
 ---
 
-<header class='navigation'>
+<header class='header'>
   <nav>
-    <Hamburger />
-    <!-- <ThemeIcon /> -->
-    <div class='nav-overlay' aria-hidden='true'></div>
     <Navigation />
   </nav>
 </header>
