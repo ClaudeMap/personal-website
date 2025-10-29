@@ -1,7 +1,10 @@
 {
-  "name": "tutorial",
+  "name": "claude-website",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "author": "Claude Mapara <claude.mapara@hotmail.co.uk",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,9 +13,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.5",
-    "astro": "^4.16.12",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "astro": "^4.16.12"
+  },
+  "devDependencies": {
+    "eslint": "9.38.0",
+    "prettier": "^3.6.2"
   }
 }
