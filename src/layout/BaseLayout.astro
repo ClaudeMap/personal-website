@@ -3,14 +3,34 @@ const { pageTitle, heading } = Astro.props;
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "../consts.ts";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/icons/Favicon.ico" />
+    <!-- Canonical -->
+    <link rel="canonical" href={`${SITE_URL}${Astro.url.pathname}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${SITE_URL}${Astro.url.pathname}`} />
+    <meta property="og:title" content={SITE_TITLE} />
+    <meta property="og:description" content={SITE_DESCRIPTION} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={`${SITE_URL}${Astro.url.pathname}`} />
+    <meta name="twitter:title" content={SITE_TITLE} />
+    <meta name="twitter:description" content={SITE_DESCRIPTION} />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Claude Mapara" />
+    <meta name="title" content={SITE_TITLE} />
+    <meta name="description" content={SITE_DESCRIPTION} />
+
     <title>{pageTitle}</title>
   </head>
   <body>
