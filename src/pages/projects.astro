@@ -1,12 +1,13 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
+import { slide } from "astro:transitions";
 const pageTitle = "Claude Mapara";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <main class="projectspg">
-    <div>
+    <div transition:animate={slide({ duration: "0.5s" })}>
       <h3>Event-Driven Cyber Deployment System</h3>
       <p class='p-main'>
         Contributed as part of a 7-engineer team building a secure, event-driven
@@ -24,7 +25,7 @@ const pageTitle = "Claude Mapara";
         <div class='technologies-used'><li>Node.js</li></div>
       </ul>
     </div>
-    <div>
+    <div transition:animate={slide({ duration: "0.7s" })}>
       <h3>Health Platform</h3>
       <p class='p-main'>
         Designed and shipped data-driven features for a platform supporting over
@@ -40,7 +41,7 @@ const pageTitle = "Claude Mapara";
         <div class='technologies-used'><li>SQL</li></div>
       </ul>
     </div>
-    <div>
+    <div transition:animate={slide({ duration: "0.9s" })}>
       <h3>Boutique Travel Concierge Platform</h3>
       <p class='p-main'>
         Contributed as part of the engineering team building a travel platform

@@ -5,26 +5,24 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='utf-8' />
-    <link
-      rel='icon'
-      type='image/svg+xml'
-      href='/icons/Favicon.ico'
-    />
-    <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/Favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
   <body>
+    <div class="overlay"></div>
     <Header />
     <main>
       <h2>{heading}</h2>
       <slot />
     </main>
     <Footer />
-    <script type="module" src="/scripts/menu.js"></script>
     <script type="module" src="/scripts/typing.js"></script>
+    <script type="module" src="/scripts/menu.js"></script>
+    <script type="module" src="/scripts/glowing.js"></script>
   </body>
 </html>

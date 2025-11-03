@@ -106,21 +106,30 @@
 :root {
   /* Fluid Typography */
 
-  --fs-xxs: clamp(10px, 1vw, 13px); /* Extra-extra-small */
-  --fs-xs: clamp(13px, 1vw, 15px); /* Extra-small */
-  --fs-sm: clamp(14px, 1.1vw, 16px); /* Small */
-  --fs-md: clamp(16px, 1.2vw, 18px); /* Medium (body text) */
-  --fs-lg: clamp(18px, 1.5vw, 20px); /* Large */
-  --fs-xl: clamp(20px, 1.5vw, 20px); /* Extra-large */
-  --fs-xxl: clamp(22px, 2vw, 26px); /* Extra-extra-large */
-  --fs-heading: clamp(32px, 4vw, 48px); /* Large-headings */
-  --fs-heading-lg: clamp(40px, 8vw, 80px); /* Extra-large-headings */
-  --f-line-height-body: clamp(
-    1.625,
-    1.6vw,
-    1.8
-  ); /* Adjust line-height fluidly */
-  --f-line-height-heading: clamp(1.1, 1.3vw, 1.5); /* For headings */
+  --fs-xxs: clamp(10px, 1vw, 13px);
+  /* Extra-extra-small */
+  --fs-xs: clamp(13px, 1vw, 15px);
+  /* Extra-small */
+  --fs-sm: clamp(14px, 1.1vw, 16px);
+  /* Small */
+  --fs-md: clamp(16px, 1.2vw, 18px);
+  /* Medium (body text) */
+  --fs-lg: clamp(18px, 1.5vw, 20px);
+  /* Large */
+  --fs-xl: clamp(20px, 1.5vw, 20px);
+  /* Extra-large */
+  --fs-xxl: clamp(22px, 2vw, 26px);
+  /* Extra-extra-large */
+  --fs-heading: clamp(32px, 4vw, 48px);
+  /* Large-headings */
+  --fs-heading-lg: clamp(40px, 8vw, 80px);
+  /* Extra-large-headings */
+  --f-line-height-body: clamp(1.625,
+      1.6vw,
+      1.8);
+  /* Adjust line-height fluidly */
+  --f-line-height-heading: clamp(1.1, 1.3vw, 1.5);
+  /* For headings */
   --font-family: "Calibre", sans-serif;
   --font-weight-body: 400;
   --font-weight-link: 500;
@@ -133,58 +142,76 @@
   --font-weight-li: 400;
 
   /* Body and Text Colors*/
-  --color-bg: #0a192f; /* Navy */
-  --background-image: radial-gradient(at 20% 100%, #1a2a4f, transparent 40%),
-    radial-gradient(at 70% 120%, #0f4c75, transparent 50%),
-    radial-gradient(at 40% 80%, #3282b8, transparent 30%),
-    radial-gradient(at 80% 40%, #5e60ce, transparent 40%),
-    radial-gradient(at 90% 10%, #6930c3, transparent 40%),
-    linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9)),
-    linear-gradient(to top, transparent, #0a192f 40%),
-    linear-gradient(
-      45deg,
-      transparent,
-      #3a0ca3 15%,
-      transparent 30%,
-      #4361ee 50%,
-      transparent
-    ),
-    linear-gradient(to bottom, #0a192f, #1a1f38 60%, #112240 80%, transparent),
-    radial-gradient(at 10% 0%, #3a0ca3, transparent 30%),
-    radial-gradient(at 85% 0%, #4361ee, transparent 30%),
-    radial-gradient(at 95% 0%, #4cc9f0, transparent 20%);
+  --color-bg: #0a192f;
+  /* Navy */
+  --bg-image: radial-gradient(90rem 70rem at 15% 120%, rgba(15, 76, 117, 0.45) 0%, rgba(15, 76, 117, 0.12) 40%, transparent 65%),
+    radial-gradient(80rem 60rem at 85% 110%, rgba(76, 201, 240, 0.35) 0%, rgba(76, 201, 240, 0.10) 38%, transparent 62%),
+    radial-gradient(75rem 65rem at 80% 45%, rgba(94, 96, 206, 0.40) 0%, rgba(94, 96, 206, 0.12) 38%, transparent 60%),
+    radial-gradient(70rem 55rem at 25% 55%, rgba(58, 12, 163, 0.35) 0%, rgba(58, 12, 163, 0.10) 35%, transparent 58%),
+    radial-gradient(50rem 40rem at 92% 8%, rgba(105, 48, 195, 0.30) 0%, rgba(105, 48, 195, 0.08) 40%, transparent 65%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 75%, rgba(0, 0, 0, 0.55) 100%),
+    linear-gradient(to top, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.9) 40%);
+  ;
+  --bg-blend-mode:
+    screen,
+    screen,
+    screen,
+    screen,
+    screen,
+    normal,
+    normal;
+  ;
+  --bg-attachment: fixed;       
+  --bg-repeat: no-repeat;
+  --bg-size: cover;
 
-  --color-section-bg: #112240; /* Light Navy */
-  --color-text: #c9d4f5; /* Mist Blue – Main body text */
-  --color-secondary-text: #a4b8dd; /* Cool Lavender – Subtext, paragraphs */
-  --color-title: #e6f1ff; /* Soft White – For main headings */
+
+  --color-section-bg: #112240;
+  /* Light Navy */
+  --color-text: #c9d4f5;
+  /* Mist Blue – Main body text */
+  --color-secondary-text: #a4b8dd;
+  /* Cool Lavender – Subtext, paragraphs */
+  --color-title: #e6f1ff;
+  /* Soft White – For main headings */
 
   /* Header Colors*/
-  --color-h1: #64ffda; /* Aqua Green – Matches link for top-level headings */
-  --color-h2: #b8c0ff; /* Violet Mist – Used for second-level headings */
-  --color-h3: #b3c2f2; /* Frost Blue – Used for h3/big-heading */
+  --color-h1: #64ffda;
+  /* Aqua Green – Matches link for top-level headings */
+  --color-h2: #b8c0ff;
+  /* Violet Mist – Used for second-level headings */
+  --color-h3: #b3c2f2;
+  /* Frost Blue – Used for h3/big-heading */
 
   /* Link and Interactive States */
-  --color-link: #64ffda; /* Aqua Green – Primary accent link color */
-  --color-link-hover: #8be9ff; /* Bright Cyan – Hover state for links */
+  --color-link: #64ffda;
+  /* Aqua Green – Primary accent link color */
+  --color-link-hover: #8be9ff;
+  /* Bright Cyan – Hover state for links */
   /* Border and Divider Colors */
-  --color-divider: #33416a; /* Twilight Slate – Table or section dividers */
+  --color-divider: #33416a;
+  /* Twilight Slate – Table or section dividers */
 
   /* Main content */
   --main-desktop-margin-inline: auto;
   --main-desktop-padding-inline: 1rem;
   --main-desktop-width: clamp(16rem, 80vw, 70ch);
   /* Main Content Desktop */
-  --main-bg-color: #0a192f; /* Navy */
-  --main-color: #112240; /* light Navy */
+  --main-bg-color: #0a192f;
+  /* Navy */
+  --main-color: #112240;
+  /* light Navy */
 
   /* Main Content Mobile */
-  --main-mobile-bg-color: #0a192f; /* Navy */
-  --main-mobile-color: #112240; /* light Navy */
+  --main-mobile-bg-color: #0a192f;
+  /* Navy */
+  --main-mobile-color: #112240;
+  /* light Navy */
   --main-mobile-padding: clamp(16px, 4vw, 24px);
 
   /* Test section */
-  --header-h: 45px; /* adjust to taste */
+  --header-h: 45px;
+  /* adjust to taste */
 }
 
 main {
@@ -213,14 +240,32 @@ body {
   text-align: left;
   display: block;
   min-height: 100dvh;
-  background-image: var(--background-image);
-  background-repeat: no-repeat;
-  background-size: 100vw 110vh;
+  background-image: var(--bg-image);
+  background-blend-mode: var(--bg-blend-mode);
+  background-repeat: var(--bg-repeat);
+  background-size: var(--bg-size);
 }
+
+.overlay {
+  position: fixed;
+  inset: 0; 
+  pointer-events: none; 
+  background: radial-gradient(
+    60rem circle at var(--x, 50%) var(--y, 50%),
+    rgba(15, 76, 117, 0.45),
+    transparent 40%
+  );
+  opacity: var(--opacity, 0);
+  transition: opacity 0.3s ease-out;
+  z-index: -1; 
+}
+
+
 
 html {
   scrollbar-color: var(--color-link) transparent;
 }
+
 h1,
 h2,
 h3 {
@@ -354,9 +399,11 @@ nav a.active {
     text-decoration: none;
     transition: color 0.3s ease;
   }
+
   .nav-links a::before {
     display: none;
   }
+
   .nav-links a:hover {
     color: var(--color-secondary-text);
   }
@@ -415,11 +462,11 @@ nav a.active {
 }
 
 @media screen and (max-width: 480px) {
-  
+
   body {
     font-size: var(--fs-xxs);
   }
- 
+
   .footer-social-links {
     gap: 0.75rem;
     margin-top: 0.75rem;
@@ -457,6 +504,7 @@ nav a.active {
 .credit a:hover {
   color: #deedee;
 }
+
 .p-main {
   color: #a4b8dd;
   line-height: 1.625;
@@ -470,6 +518,7 @@ nav a.active {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 .p-main a::before {
   content: "";
   position: absolute;
@@ -484,12 +533,13 @@ nav a.active {
 .p-main a:hover {
   transition: color 0.1s ease;
 }
+
 .p-main a:hover::before {
   width: 100%;
 }
 
 /* Projects Styling */
-.project  {
+.project {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -497,7 +547,8 @@ nav a.active {
   padding: 0;
   list-style: none;
   margin-bottom: 3rem;
-  gap: 0.5rem 0.0175rem;;
+  gap: 0.5rem 0.0175rem;
+  ;
 }
 
 .technologies-used {
@@ -517,6 +568,7 @@ nav a.active {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .social-link {
   display: flex;
   flex-direction: row;
@@ -524,6 +576,7 @@ nav a.active {
   width: 20px;
   height: 20px;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -551,6 +604,7 @@ h1 {
   font-weight: var(--font-weight-h1-light);
   font-size: var(--fs-sm), var(--fs-md);
 }
+
 h2 {
   color: var(--color-h2);
   font-family: var(--font-family);
@@ -623,10 +677,12 @@ li.skill-item {
 }
 
 @keyframes blink {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }

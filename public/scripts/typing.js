@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function startTyping() {
   const words = ["experiences", "apps", "systems", "products", "prototypes"];
   const typedWord = document.getElementById("typed-word");
   const cursor = document.querySelector(".cursor");
@@ -34,4 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   type();
-});
+};
+
+document.addEventListener("astro:page-load", startTyping);
