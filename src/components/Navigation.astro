@@ -1,18 +1,16 @@
 ---
-const { url } = Astro.request;
-const currentPath = new URL(url).pathname;
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
-<h2><a href='/' class={currentPath === "/" ? "active" : ""}>Home</a></h2>
+<h2><a href='/'>{SITE_TITLE}</a></h2>
 <div>
-  <a href='/about/' class={currentPath === "/about/" ? "active" : ""}>/about</a>
-  <a href='/projects' class={currentPath === "/projects" ? "active" : ""}
-    >/projects</a
-  >
-  <a
-    href='/downloads/Resume.pdf'
+  <HeaderLink href='/about'>/about</HeaderLink>
+  <HeaderLink href='/projects'>/projects</HeaderLink>
+  <HeaderLink
+    href='/downloads/Claude_Resume_SWE.pdf'
     download
     target='_blank'
-    rel='noopener noreferrer'>Resume</a
+    rel='noopener noreferrer'>Resume</HeaderLink
   >
 </div>
