@@ -5,15 +5,13 @@ import { slide } from "astro:transitions";
 const pageTitle = "Claude Mapara";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <main class="projectspg">
-    <div transition:animate={slide({ duration: "0.5s" })}>
+<BaseLayout pageTitle={pageTitle} sectionId="projectspg">
+    <div>
       <h3>Event-Driven Cyber Deployment System</h3>
       <p class='p-main'>
         Contributed as part of a 7-engineer team building a secure, event-driven
         platform for a cybersecurity client. Developed backend services and
-        identity workflows for provisioning tooling in distributed,
-        low-connectivity environments. The system processed thousands of
+        identity workflows for provisioning tooling in distributed environments. The system processed thousands of
         requests per minute and integrated DynamoDB, CloudFront, and Lambda to
         deliver protected access at scale.
       </p>
@@ -25,7 +23,7 @@ const pageTitle = "Claude Mapara";
         <div class='technologies-used'><li>Node.js</li></div>
       </ul>
     </div>
-    <div transition:animate={slide({ duration: "0.7s" })}>
+    <div>
       <h3>Health Platform</h3>
       <p class='p-main'>
         Designed and shipped data-driven features for a platform supporting over
@@ -41,7 +39,7 @@ const pageTitle = "Claude Mapara";
         <div class='technologies-used'><li>SQL</li></div>
       </ul>
     </div>
-    <div transition:animate={slide({ duration: "0.9s" })}>
+    <div>
       <h3>Boutique Travel Concierge Platform</h3>
       <p class='p-main'>
         Contributed as part of the engineering team building a travel platform
@@ -59,5 +57,4 @@ const pageTitle = "Claude Mapara";
         <div class='technologies-used'><li>n8n</li></div>
       </ul>
     </div>
-  </main>
 </BaseLayout>

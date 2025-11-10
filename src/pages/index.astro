@@ -11,15 +11,11 @@ const identity = {
 };
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <main class='homepg'>
-    <section>
+<BaseLayout pageTitle={pageTitle} sectionId="homepg" isHero>
       <h1>Hi, my name is</h1>
       <h2 class='big-heading'>{identity.firstName}</h2>
       <h3 class='big-heading'>I design and build</h3>
       <h3 class='big-heading'>
         <span id='typed-word'>experiences</span><span class='cursor'>|</span>
       </h3>
-    </section>
-  </main>
 </BaseLayout>

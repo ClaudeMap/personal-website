@@ -11,44 +11,52 @@ const identity = {
 };
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <main class='aboutpg'>
-    <section>
-      <p class='p-main'>
-        I’m a {identity.occupation} with a background in building secure, scalable
-        systems across full-stack platforms. I’ve shipped products from 0 → 1 across
-        a range of settings, from large corporations to startups and small businesses.
-        You'll find me working across backend development (optimising for performance,
-        reliability, and scale) and frontend interfaces (helping design intuitive,
-        low-friction UX for idea-to-deploy experiences), using modern frameworks
-        to turn ideas into working apps.
-      </p>
-      <p class='p-main'>
-        Currently, I'm at <a
-          href='https://www.ibm.com/uk-en'
-          target='_blank'
-          rel='noopner noreferrer'>{identity.company}</a
-        > building a platform enabling access for distributed teams. I
-        contribute to the design and delivery of backend services, and help
-        improve team workflows, focusing on scalable service logic and clear
-        system interfaces across distributed environments. <p class='p-main'>
-          I care about writing clear, maintainable code, building systems that
-          hold up under pressure, and simplifying things that don’t need to be
-          complicated. In my spare time, I can be found working out, trying out
-          new restaurants, attending the occasional music or art fair, or
-          researching tech I may or may not use.
-        </p>
-      </p>
+<BaseLayout pageTitle={pageTitle} sectionId='aboutpg'>
+  <p class='p-main'>
+    I’m a {identity.occupation} with a background in <span
+      class='highlight-skill'>building secure, scalable systems</span
+    > across full-stack platforms. I’ve <span class='highlight-skill'
+      >shipped products from 0 → 1</span
+    > across a range of settings, from <span class='highlight-skill'
+      >large corporations to startups</span
+    > and small businesses. You'll find me working across backend development,<span
+      class='highlight-skill'
+    >
+      optimising for performance, reliability, and scale.</span
+    > As well as frontend interfaces, helping <span class='highlight-skill'
+      >design intuitive, low-friction UX</span
+    > for idea-to-deploy experiences using modern frameworks to turn ideas into working
+    apps.
+  </p>
+  <p class='p-main'>
+    Currently, I'm at <a
+      href='https://www.ibm.com/uk-en'
+      target='_blank'
+      rel='noopner noreferrer'>{identity.company}</a
+    > building a <span class='highlight-skill'
+      >platform enabling access for distributed teams</span
+    >. I contribute to the design and delivery of backend services, and help
+    improve team workflows, focusing on <span class='highlight-skill'
+      >scalable service logic and clear system interfaces</span
+    >. <p class='p-main'>
+      I care about <span class='highlight-skill'
+        >writing clear, maintainable code</span
+      >, <span class='highlight-skill'>building systems that hold up
+      under pressure</span>, and <span class="highlight-skill">simplifying things that don’t need to be complicated</span>.
+      In my spare time, I can be found working out,<span class="highlight-skill"> trying out new restaurants</span>,
+      attending the occasional music or art fair, or <span class="highlight-skill">researching tech</span> I may or
+      may not use.
+    </p>
+  </p>
 
-      <p class='p-main'>
-        If any of that resonates and you’d like to chat about work, projects, or
-        anything in between, <a
-          href='mailto:claude.mapara@hotmail.co.uk'
-          target='_blank'
-          rel='noopner noreferrer'
-          aria-label='Email'>lets talk</a
-        >.
-      </p>
-    </section>
-  </main>
+  <p class='p-main'>
+    If any of that resonates and you’d like to chat about <span class="highlight-skill">work, projects, or
+    anything in between</span>, <a
+    class="highlight-cta"
+      href='mailto:claude.mapara@hotmail.co.uk'
+      target='_blank'
+      rel='noopner noreferrer'
+      aria-label='Email'>lets talk</a
+    >.
+  </p>
 </BaseLayout>
