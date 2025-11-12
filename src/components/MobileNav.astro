@@ -1,0 +1,18 @@
+---
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<!-- Nav Menu -->
+<h2><HeaderLink href='/' class='mobile-nav'>{SITE_TITLE}</HeaderLink></h2>
+<HeaderLink href='/about' class='mobile-nav'>/about</HeaderLink>
+<HeaderLink href='/projects' class='mobile-nav'>/projects</HeaderLink>
+<HeaderLink
+  href='/downloads/Claude_Resume_SWE.pdf'
+  download
+  target='_blank'
+  rel='noopener noreferrer'
+  class='mobile-nav'
+>
+  /resume</HeaderLink
+>
