@@ -889,6 +889,11 @@ h3.big-heading {
 /*
     Medium screens (768px)
     ========================================================================== */
+@media screen and (min-width: 769px) {
+  .nav-close {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 768px) {
   /*  ==========================================================================
@@ -948,6 +953,36 @@ h3.big-heading {
     font-weight: 600;
     backdrop-filter: blur(10px);
     cursor: pointer;
+  }
+
+  /*  ==========================================================================
+    Menu Close Button
+    ========================================================================== */
+  .nav-close {
+    /* Positioning */
+    position: absolute;
+    top: 3.4rem;
+    right: 1.25rem;
+    z-index: 2100;
+
+    /* Box model */
+    line-height: 1;
+
+    /* Visual */
+    border: none;
+    font-size: 2rem;
+    color: var(--color-link);
+    cursor: pointer;
+    opacity: 0;
+    background: none;
+    transition:
+      opacity 0.3s ease 0.3s,
+      color 0.3s ease;
+  }
+  .mobile-menu.is-open .nav-close {
+    /* Visual */
+    opacity: 1;
+    transition-delay: calc(var(--menu-transition-duration) - 0.2s);
   }
 
   /*  ==========================================================================
