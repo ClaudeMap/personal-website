@@ -1,17 +1,14 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layout/BaseLayout.astro";
-const pageTitle = "Claude Mapara";
+import { SITE_TITLE } from "../consts";
 
 const identity = {
   firstName: "Claude",
-  location: "London",
-  occupation: "software engineer",
-  company: "IBM",
 };
 ---
 
-<BaseLayout pageTitle={pageTitle} sectionId='homepg' isHero>
+<BaseLayout pageTitle={SITE_TITLE} sectionId='homepg' isHero>
   <h1>Hi, my name is</h1>
   <h2 class='big-heading'>{identity.firstName}</h2>
   <h3 class='big-heading'>I design and build</h3>
