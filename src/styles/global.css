@@ -705,7 +705,7 @@ h3.big-heading {
     Houses all footer content including social links and credits.
     ========================================================================== */
 
-.custom_footer {
+#custom_footer {
   /* Layout */
   display: flex;
   flex-direction: column;
@@ -714,23 +714,12 @@ h3.big-heading {
   font-weight: 300;
 
   /* Box model */
-  padding: 15px;
+  padding-block: inherit;
   margin-top: auto;
   height: auto;
 
   /* Typography */
   color: var(--color-secondary-text);
-}
-
-/*Footersocials styling*/
-.footer-social-links {
-  /* Layout */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  /* Box model */
-  margin-top: 1rem;
 }
 
 /*  Individual social link icons
@@ -1055,18 +1044,20 @@ h3.big-heading {
   }
 
   /* Sync appearance with circle expansion (opening) */
-  .mobile-menu.is-open a:nth-child(1) {
+  .mobile-menu.is-open a:nth-child(2) {
     transition-delay: calc(var(--menu-transition-duration) / 2);
   }
-  .mobile-menu.is-open a:nth-child(2) {
+  .mobile-menu.is-open a:nth-child(3) {
     transition-delay: calc(var(--menu-transition-duration) / 2 + 0.1s);
   }
-  .mobile-menu.is-open a:nth-child(3) {
+  .mobile-menu.is-open a:nth-child(4) {
     transition-delay: calc(var(--menu-transition-duration) / 2 + 0.2s);
   }
-  .mobile-menu.is-open a:nth-child(4) {
+  .mobile-menu.is-open a:nth-child(5) {
     transition-delay: calc(var(--menu-transition-duration) / 2 + 0.3s);
   }
+  
+
 
   /* Sync appearance with circle fade out (closing) */
   .mobile-menu:not(.is-open) a {
@@ -1076,16 +1067,16 @@ h3.big-heading {
   }
 
   /* Staggered exit timing (closing) */
-  .mobile-menu:not(.is-open) a:nth-child(4) {
+  .mobile-menu:not(.is-open) a:nth-child(5) {
     transition-delay: 0s;
   }
-  .mobile-menu:not(.is-open) a:nth-child(3) {
+  .mobile-menu:not(.is-open) a:nth-child(4) {
     transition-delay: calc(var(--menu-transition-duration) / 10);
   }
-  .mobile-menu:not(.is-open) a:nth-child(2) {
+  .mobile-menu:not(.is-open) a:nth-child(3) {
     transition-delay: calc(var(--menu-transition-duration) / 5);
   }
-  .mobile-menu:not(.is-open) a:nth-child(1) {
+  .mobile-menu:not(.is-open) a:nth-child(2) {
     transition-delay: calc(var(--menu-transition-duration) / 3);
   }
 
