@@ -881,6 +881,13 @@ h3.big-heading {
 .nav-toggle {
   display: none;
 }
+
+/* mobile */
+@media (hover: none) {
+  nav a:hover::after {
+    width: 0;
+  }
+}
 /*
     Medium screens (768px)
     ========================================================================== */
