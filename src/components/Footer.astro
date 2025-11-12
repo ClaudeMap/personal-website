@@ -54,34 +54,36 @@ const creditLinks = [
 ];
 ---
 
-<footer class='custom_footer'>
-  <div class='footer-social-links'>
-    {
-      socialLinks.map((link) => (
-        <div class='footer-social-link'>
-          <a
-            href={link.href}
-            target={link.target}
-            rel={link.rel}
-            aria-label={link.ariaLabel}
-          >
-            <img src={link.imgSrc} alt={link.alt} />
-          </a>
-        </div>
-      ))
-    }
-  </div>
+<footer>
+  <section id='custom_footer''>
+    <div class='footer-social-links'>
+      {
+        socialLinks.map((link) => (
+          <div class='footer-social-link'>
+            <a
+              href={link.href}
+              target={link.target}
+              rel={link.rel}
+              aria-label={link.ariaLabel}
+            >
+              <img src={link.imgSrc} alt={link.alt} />
+            </a>
+          </div>
+        ))
+      }
+    </div>
 
-  <p class='credit'>
-    {
-      creditLinks.map((link) => (
-        <span>
-          {link.prefix}
-          <a name={link.name} href={link.href} aria-label={link.ariaLabel}>
-            {link.name}
-          </a>
-        </span>
-      ))
-    }
-  </p>
+    <p class='credit'>
+      {
+        creditLinks.map((link) => (
+          <span>
+            {link.prefix}
+            <a name={link.name} href={link.href} aria-label={link.ariaLabel}>
+              {link.name}
+            </a>
+          </span>
+        ))
+      }
+    </p>
+  </section>
 </footer>
