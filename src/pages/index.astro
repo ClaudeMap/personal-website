@@ -38,6 +38,7 @@ const identity = {
     let isPaused = false;
 
     const type = () => {
+      if (isPaused) return;
       const currentWord = words[wordIndex];
       const displayedText = currentWord.substring(0, charIndex);
       typedWord.textContent = displayedText;
@@ -48,11 +49,11 @@ const identity = {
       if (!isDeleting && charIndex < currentWord.length) {
         //typing
         charIndex++;
-        setTimeout(type, 100);
+        typingTimeout = setTimeout(type, 100);
       } else if (isDeleting && charIndex > 0) {
         //deleting
         charIndex--;
-        setTimeout(type, 60);
+        typingTimeout = setTimeout(type, 60);
       } else {
         // Pause before deleting/moving to next word enable blinking
         cursor.classList.add("blink");
@@ -60,7 +61,7 @@ const identity = {
         if (!isDeleting) {
           wordIndex = (wordIndex + 1) % words.length;
         }
-        setTimeout(type, 1000);
+        typingTimeout = setTimeout(type, 1000);
       }
     };
 
@@ -79,11 +80,9 @@ const identity = {
       if (document.hidden) {
         pauseTyping();
       } else {
-        resumeTyping();
+        setTimeout(resumeTyping, 250);
       }
     });
-
-    type();
 
     // Stop typing when leaving the page
     document.addEventListener(
@@ -91,6 +90,7 @@ const identity = {
       () => clearTimeout(typingTimeout),
       { once: true }
     );
+    type();
   }
   onPageReady(startTyping);
 </script>
