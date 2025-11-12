@@ -18,3 +18,7 @@ Built with:
 - **[TypeScript](https://www.typescriptlang.org/)**, safe and less headache in the future (currently refactoring)
 - **[Netlify](https://www.netlify.com/)**, for seamless deployment and hosting
 - **[Figma](https://www.figma.com/)**, to design a clean experience
+  
+Some useful resources I found and liked along the way:
+
+- [Idiomatic CSS](https://github.com/necolas/idiomatic-css) helped with structuring styles and developing a pattern, no more time wasted scanning for things!
