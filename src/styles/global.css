@@ -1103,6 +1103,16 @@ h3.big-heading {
     /* Visual */
     font-size: var(--fs-xs);
   }
+
+  .credit {
+  /*Box model*/
+  margin: 0;
+  padding: 0.625rem;
+
+  /* Typography */
+  text-align: center;
+  font-size: var(--fs-xxs);
+}
 }
 
 /* 
