@@ -299,6 +299,7 @@ body {
 
   /* Overflow handling */
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Scrollbar and behavior */
