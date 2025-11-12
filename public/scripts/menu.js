@@ -33,54 +33,55 @@ document.addEventListener("astro:page-load", () => {
   panel.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
-  });
 
-  // Only apply delay if menu is visible (mob open state)
-  const isMobMenuActive =
-    window.getComputedStyle(btn).display !== "none" &&
-    panel.classList.contains("is-open");
+    // Only apply delay if menu is visible (mob open state)
+    const isMobMenuActive =
+      window.getComputedStyle(btn).display !== "none" &&
+      panel.classList.contains("is-open");
 
-  if (!isMobMenuActive) return;
+    if (!isMobMenuActive) return;
 
-  // Stop Astro’s instant navigation
-  e.preventDefault();
+    // Stop Astro’s instant navigation
+    e.preventDefault();
 
-  // Trigger the closing animation
-  panel.classList.remove("is-open");
-  btn.setAttribute("aria-expanded", "false");
-  document.body.classList.remove("no-scroll");
+    // Trigger the closing animation
+    panel.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("no-scroll");
 
-  let didTransition = false;
+    let didTransition = false;
 
-  const navigate = () => {
-    panel.hidden = true;
-    if (window.Astro?.router?.navigate) {
-      Astro.router.navigate(a.getAttribute("href"));
-    } else if (window.Astro?.navigate) {
-      Astro.navigate(a.getAttribute("href"));
-    } else {
-      window.location.href = a.href;
-    }
-  };
+    const navigate = () => {
+      panel.hidden = true;
+      if (window.Astro?.router?.navigate) {
+        Astro.router.navigate(a.getAttribute("href"));
+      } else if (window.Astro?.navigate) {
+        Astro.navigate(a.getAttribute("href"));
+      } else {
+        window.location.href = a.href;
+      }
+    };
 
-  // listen for the clip-path transition end
-  const onTransitionEnd = (e) => {
-    if (e.propertyName !== "clip-path") return;
-    didTransition = true;
-    panel.removeEventListener("transitionend", onTransitionEnd);
-    navigate();
-  };
-  panel.addEventListener("transitionend", onTransitionEnd);
-
-  // Fallback if the event doesnt fire
-  const duration =
-    parseFloat(
-      getComputedStyle(panel).getPropertyValue("--menu-transition-duration")
-    ) * 1000 || 600;
-  setTimeout(() => {
-    if (!didTransition) {
-      console.warn("Transitionend not fired; using fallback navigation.");
+    // listen for the clip-path transition end
+    const onTransitionEnd = (e) => {
+      if (e.propertyName !== "clip-path") return;
+      didTransition = true;
+      panel.removeEventListener("transitionend", onTransitionEnd);
       navigate();
-    }
-  }, duration + 100);
+    };
+    panel.addEventListener("transitionend", onTransitionEnd);
+
+    // Fallback if the event doesnt fire
+    const duration =
+      parseFloat(
+        getComputedStyle(panel).getPropertyValue("--menu-transition-duration")
+      ) * 1000 || 600;
+
+    setTimeout(() => {
+      if (!didTransition) {
+        console.warn("Transitionend not fired; using fallback navigation.");
+        navigate();
+      }
+    }, duration + 100);
+  });
 });
