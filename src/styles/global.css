@@ -168,7 +168,6 @@
   --fs-heading: clamp(26px, 4vw, 30px);
   --fs-heading-lg: clamp(40px, 8vw, 80px);
   --f-line-height-body: clamp(1.3, 1.4vw, 1.45);
-  --f-line-height-credit: clamp(1.4, 1.2vw, 1.6);
   --f-line-height-heading: clamp(1.1, 1.3vw, 1.5);
 
   /* Font families and weights */
@@ -1119,14 +1118,12 @@ h3.big-heading {
     Large mobiles (425px)
     ========================================================================== */
 @media screen and (max-width: 425px) {
-  /* adjustments here */
 }
 
 /* 
     Medium mobiles (375px)
     ========================================================================== */
 @media screen and (max-width: 375px) {
-  /* adjustments here */
 }
 
 /* 
