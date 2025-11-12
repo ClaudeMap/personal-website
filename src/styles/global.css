@@ -1,26 +1,66 @@
-/*Font - Google Plus Jakarta Sans*/
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+/*  ==========================================================================
+    Font: Weight and Styles
+    ========================================================================== */
 
-/* CSS Variables*/
-
-/*Font - Calibre Font Family Definitions*/
-
-/* Base Font Family */
 @font-face {
-  font-family: "Calibre";
-  src: url(../../assets/fonts/CalibreRegular.otf) format("opentype");
-  font-weight: normal;
+  font-family: "CascadiaCode";
+  src: url(../../assets/fonts/CascadiaCode-Light.otf);
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
+  font-family: "CascadiaCode";
+  src: url(../../assets/fonts/CascadiaCode-Regular.otf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(../../assets/fonts/CascadiaMono-Light.otf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(../../assets/fonts/CascadiaMono-Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(../../assets/fonts/CascadiaMono-ExtraLight.otf);
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(../../assets/fonts/CascadiaCodeNF-Bold.otf);
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(../../assets/fonts/CascadiaCodeNF-ExtraLight.otf);
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Calibre";
+  src: url(../../assets/fonts/CalibreRegular.otf) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreRegularItalic.otf) format("opentype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
 }
 
-/* Medium weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreMedium.otf) format("opentype");
@@ -35,7 +75,6 @@
   font-style: italic;
 }
 
-/* Semibold weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreSemibold.otf) format("opentype");
@@ -50,22 +89,20 @@
   font-style: italic;
 }
 
-/* Bold weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreBold.otf) format("opentype");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreBoldItalic.otf) format("opentype");
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
 }
 
-/* Black weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreBlack.otf) format("opentype");
@@ -80,7 +117,6 @@
   font-style: italic;
 }
 
-/* Light weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreLight.otf) format("opentype");
@@ -88,7 +124,6 @@
   font-style: normal;
 }
 
-/* Thin weights */
 @font-face {
   font-family: "Calibre";
   src: url(../../assets/fonts/CalibreThin.otf) format("opentype");
@@ -104,152 +139,310 @@
 }
 
 :root {
-  /* Fluid Typography */
+  /*  ==========================================================================
+      Breakpoints
+      ========================================================================== */
 
+  /* Breakpoints */
+  --bp-xxl: 1440px;
+  --bp-xl: 1280px;
+  --bp-lg: 1024px;
+  --bp-md: 768px;
+  --bp-sm: 480px;
+  --bp-sml: 425px;
+  --bp-xs-md: 375px;
+  --bp-xs: 330px;
+
+  /*  ==========================================================================
+      Typography
+      ========================================================================== */
+
+  /* Font sizes and line heights */
   --fs-xxs: clamp(10px, 1vw, 13px);
-  /* Extra-extra-small */
   --fs-xs: clamp(13px, 1vw, 15px);
-  /* Extra-small */
   --fs-sm: clamp(14px, 1.1vw, 16px);
-  /* Small */
   --fs-md: clamp(16px, 1.2vw, 18px);
-  /* Medium (body text) */
   --fs-lg: clamp(18px, 1.5vw, 20px);
-  /* Large */
   --fs-xl: clamp(20px, 1.5vw, 20px);
-  /* Extra-large */
   --fs-xxl: clamp(22px, 2vw, 26px);
-  /* Extra-extra-large */
-  --fs-heading: clamp(32px, 4vw, 48px);
-  /* Large-headings */
+  --fs-heading: clamp(26px, 4vw, 30px);
   --fs-heading-lg: clamp(40px, 8vw, 80px);
-  /* Extra-large-headings */
-  --f-line-height-body: clamp(1.625,
-      1.6vw,
-      1.8);
-  /* Adjust line-height fluidly */
+  --f-line-height-body: clamp(1.3, 1.4vw, 1.45);
+  --f-line-height-credit: clamp(1.4, 1.2vw, 1.6);
   --f-line-height-heading: clamp(1.1, 1.3vw, 1.5);
-  /* For headings */
+
+  /* Font families and weights */
   --font-family: "Calibre", sans-serif;
+  --font-family-footer: "CascadiaCode", monospace;
   --font-weight-body: 400;
   --font-weight-link: 500;
-  --font-weight-title: 700;
   --font-weight-h1: 900;
   --font-weight-h1-light: 600;
   --font-weight-h2: 700;
   --font-weight-h3: 600;
-
   --font-weight-li: 400;
 
-  /* Body and Text Colors*/
+  /*  ==========================================================================
+      Color Palette: Backgrounds
+      ========================================================================== */
+
+  /*  Base background color */
   --color-bg: #0a192f;
-  /* Navy */
-  --bg-image: radial-gradient(90rem 70rem at 15% 120%, rgba(15, 76, 117, 0.45) 0%, rgba(15, 76, 117, 0.12) 40%, transparent 65%),
-    radial-gradient(80rem 60rem at 85% 110%, rgba(76, 201, 240, 0.35) 0%, rgba(76, 201, 240, 0.10) 38%, transparent 62%),
-    radial-gradient(75rem 65rem at 80% 45%, rgba(94, 96, 206, 0.40) 0%, rgba(94, 96, 206, 0.12) 38%, transparent 60%),
-    radial-gradient(70rem 55rem at 25% 55%, rgba(58, 12, 163, 0.35) 0%, rgba(58, 12, 163, 0.10) 35%, transparent 58%),
-    radial-gradient(50rem 40rem at 92% 8%, rgba(105, 48, 195, 0.30) 0%, rgba(105, 48, 195, 0.08) 40%, transparent 65%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 75%, rgba(0, 0, 0, 0.55) 100%),
+
+  /*  Layered background image (radial + linear gradients)
+    ========================================================================== 
+    - The order of gradients determines stacking:
+    - 1–5: Colored radial glows (additive via screen blend)
+    - 6–7: Linear gradients for vignettes and fades
+    ========================================================================== */
+
+  --bg-image:
+    radial-gradient(
+      90rem 70rem at 15% 120%,
+      rgba(15, 76, 117, 0.45) 0%,
+      rgba(15, 76, 117, 0.12) 40%,
+      transparent 65%
+    ),
+    radial-gradient(
+      80rem 60rem at 85% 110%,
+      rgba(76, 201, 240, 0.35) 0%,
+      rgba(76, 201, 240, 0.1) 38%,
+      transparent 62%
+    ),
+    radial-gradient(
+      75rem 65rem at 80% 45%,
+      rgba(94, 96, 206, 0.4) 0%,
+      rgba(94, 96, 206, 0.12) 38%,
+      transparent 60%
+    ),
+    radial-gradient(
+      70rem 55rem at 25% 55%,
+      rgba(58, 12, 163, 0.35) 0%,
+      rgba(58, 12, 163, 0.1) 35%,
+      transparent 58%
+    ),
+    radial-gradient(
+      50rem 40rem at 92% 8%,
+      rgba(105, 48, 195, 0.3) 0%,
+      rgba(105, 48, 195, 0.08) 40%,
+      transparent 65%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.35) 75%,
+      rgba(0, 0, 0, 0.55) 100%
+    ),
     linear-gradient(to top, rgba(10, 25, 47, 0) 0%, rgba(10, 25, 47, 0.9) 40%);
-  ;
-  --bg-blend-mode:
-    screen,
-    screen,
-    screen,
-    screen,
-    screen,
-    normal,
-    normal;
-  ;
-  --bg-attachment: fixed;       
+
+  /*  Blend and background behavior */
+  --bg-blend-mode: screen, screen, screen, screen, screen, normal, normal;
+  --bg-attachment: fixed;
   --bg-repeat: no-repeat;
   --bg-size: cover;
 
+  /*  ==========================================================================
+      Color Palette: Text and Elements
+      ========================================================================== */
 
-  --color-section-bg: #112240;
-  /* Light Navy */
+  /* Body text */
   --color-text: #c9d4f5;
-  /* Mist Blue – Main body text */
   --color-secondary-text: #a4b8dd;
-  /* Cool Lavender – Subtext, paragraphs */
-  --color-title: #e6f1ff;
-  /* Soft White – For main headings */
+  --color-credit-text: #94a3b8;
+  --color-credit-link-hover: #deedee;
+  --color-highlight-text: rgba(255, 255, 255, 0.792);
 
-  /* Header Colors*/
+  /* Header text*/
   --color-h1: #64ffda;
-  /* Aqua Green – Matches link for top-level headings */
   --color-h2: #b8c0ff;
-  /* Violet Mist – Used for second-level headings */
   --color-h3: #b3c2f2;
-  /* Frost Blue – Used for h3/big-heading */
 
   /* Link and Interactive States */
   --color-link: #64ffda;
-  /* Aqua Green – Primary accent link color */
+  --color-link-active: #b3c2f2;
   --color-link-hover: #8be9ff;
-  /* Bright Cyan – Hover state for links */
-  /* Border and Divider Colors */
-  --color-divider: #33416a;
-  /* Twilight Slate – Table or section dividers */
+  --scrollbar-color: #94a3b8;
+  --nav-header-height: 45px;
 
-  /* Main content */
-  --main-desktop-margin-inline: auto;
-  --main-desktop-padding-inline: 1rem;
-  --main-desktop-width: clamp(16rem, 80vw, 70ch);
-  /* Main Content Desktop */
-  --main-bg-color: #0a192f;
-  /* Navy */
-  --main-color: #112240;
-  /* light Navy */
-
-  /* Main Content Mobile */
-  --main-mobile-bg-color: #0a192f;
-  /* Navy */
-  --main-mobile-color: #112240;
-  /* light Navy */
-  --main-mobile-padding: clamp(16px, 4vw, 24px);
-
-  /* Test section */
-  --header-h: 45px;
-  /* adjust to taste */
+  /*  ==========================================================================
+      Transitions
+      ========================================================================== */
+  /* Mobile Menu transition */
+  --menu-transition-duration: 1s;
 }
 
+/* ==========================================================================
+    Base: Body and document 
+   ========================================================================== */
+
+/*  Document
+    ========================================================================== */
+
 main {
+  /* Animation */
   animation: fadeInAnimation ease-in 0.9s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 html,
 body {
-  overflow-x: hidden;
+  /* Box model */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   height: 100%;
-  box-sizing: border-box;
+
+  /* Overflow handling */
+  overflow-x: hidden;
+}
+
+/* Scrollbar and behavior */
+html {
+  scrollbar-color: var(--scrollbar-color) transparent;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 
 body {
+  /* Display & positioning */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  /* Box model */
+  min-height: 100dvh;
+  line-height: var(--f-line-height-body);
+
+  /* Typography */
   font-family: var(--font-family);
   font-weight: var(--font-weight-body);
-  font-size: var(--fs-md);
+  font-size: var(--fs-xl);
   color: var(--color-text);
-  line-height: var(--f-line-height-body);
+
+  /* Visual */
   background-color: var(--color-bg);
-  margin: 0;
-  text-align: left;
-  display: block;
-  min-height: 100dvh;
   background-image: var(--bg-image);
   background-blend-mode: var(--bg-blend-mode);
   background-repeat: var(--bg-repeat);
   background-size: var(--bg-size);
 }
 
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/*  Headings
+    ========================================================================== */
+h1,
+h2,
+h3 {
+  line-height: var(--f-line-height-heading);
+}
+
+/*  ==========================================================================
+    Header: Desktop and large screens
+    ========================================================================== */
+
+header {
+  /* Display & positioning */
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 1.5em;
+  z-index: 999;
+
+  /* Box model */
+  width: min(100% - 2em, 720px);
+  min-height: var(--nav-header-height);
+  margin: 0 auto;
+  padding: 0 1em;
+  box-sizing: border-box;
+  border-radius: 1em;
+
+  /* Visual */
+  text-decoration: none;
+  backdrop-filter: blur(15px);
+  box-shadow:
+    inset 0 0 0 1px #fff3,
+    0 2px 8px rgba(18, 18, 18, 0.8);
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+/*  ==========================================================================
+    Navigation 
+    ========================================================================== */
+
+/*  Base nav container
+    ========================================================================== */
+
+nav {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Box model*/
+  margin: 0px;
+  width: min(100% - 2em, 720px);
+}
+
+/*  Links
+    ========================================================================== */
+
+nav a {
+  /* Display & box model*/
+  display: inline-block;
+  padding: 12px 0.5em 11px;
+
+  /* Typography */
+  font-weight: var(--font-weight-link);
+  font-size: var(--fs-md);
+  text-decoration: none;
+  color: var(--color-link);
+
+  /* Positioning */
+  position: relative;
+
+  /* Effects */
+  transition: color 0.3s ease;
+}
+
+/*  States
+    ========================================================================== */
+
+nav a:hover {
+  color: var(--color-secondary-text);
+}
+
+nav a.active {
+  color: var(--color-link-active);
+  border-bottom: 1px solid var(--color-link);
+}
+
+/*  ==========================================================================
+    Effects 
+    ========================================================================== */
+
+/* Glowing cursor overlay */
 .overlay {
+  /* Positioning */
   position: fixed;
-  inset: 0; 
-  pointer-events: none; 
+  inset: 0;
+  z-index: -1;
+
+  /* Interaction */
+  pointer-events: none;
+
+  /* Visual */
   background: radial-gradient(
     60rem circle at var(--x, 50%) var(--y, 50%),
     rgba(15, 76, 117, 0.45),
@@ -257,427 +450,391 @@ body {
   );
   opacity: var(--opacity, 0);
   transition: opacity 0.3s ease-out;
-  z-index: -1; 
 }
 
+/*  ==========================================================================
+    Header: Mobile and small screens
+    ========================================================================== */
 
-
-html {
-  scrollbar-color: var(--color-link) transparent;
-}
-
-h1,
-h2,
-h3 {
-  line-height: var(--f-line-height-heading);
-}
-
-/* Navigation Bar Styles*/
-header {
-  min-height: var(--header-h);
-  position: sticky;
-  top: 1.5em;
-  align-items: center;
-  padding: 0 1em;
-  width: min(100% - 2em, 720px);
-  margin: 0 auto;
-  text-decoration: none;
-  backdrop-filter: blur(15px);
-  border-radius: 1em;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-  z-index: 999;
-  box-shadow: inset 0 0 0 1px #fff3, 0 2px 8px rgba(18, 18, 18, 0.8);
-  box-sizing: border-box;
-  display: flex;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0px;
-  width: min(100% - 2em, 720px);
-}
-
-nav a {
-  display: inline-block;
-  font-weight: var(--font-weight-link);
-  font-size: var(--fs-md);
-  text-decoration: none;
-  color: var(--color-link);
-  position: relative;
-  transition: color 0.3s ease;
-  padding: 0.5em;
-  padding-bottom: 11px;
-  padding-top: 12px;
-}
-
-nav a:hover {
-  color: var(--color-secondary-text);
-  transition: color 0.3s ease;
-}
-
-nav a.active {
-  color: var(--color-h3);
-  border-bottom: 1px solid var(--color-link);
-}
-
+/* Mobile/minimized header container */
 .header-mini {
+  /* Box model */
   width: fit-content;
-  left: calc(100% - 4.5em - 200px);
   max-width: 720px;
+
+  /* Positioning */
+  left: calc(100% - 4.5em - 200px);
 }
 
-.homepg {
+/*  ==========================================================================
+    Page Layouts
+    ========================================================================== */
+
+/* Home page */
+#homepg {
+  /* Layout */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100dvh - 6rem - var(--nav-header-height));
+  padding-block: 0;
+
+  /* Box model */
+  width: min(100% - 2em, 720px);
   margin-inline: auto;
-  margin-top: 24vh;
-  width: min(100% - 2em, 720px);
-  flex: 1;
 }
 
-.aboutpg {
-  display: block;
-  margin: auto;
-  margin-top: 4em;
-  width: min(100% - 2em, 720px);
-}
-
-.projectspg {
-  display: block;
-  margin: auto;
-  margin-top: 4em;
-  width: min(100% - 2em, 720px);
-}
-
-.posts {
-  max-width: 700px;
-  width: fit-content;
-  margin: auto;
-}
-
-.post-title a {
-  border-bottom: 2.5px solid var(--color-divider);
-  font-size: var(--fs-md);
-  color: var(--color-link);
-  text-decoration: none;
-  font-weight: var(--font-weight-link);
-}
-
-.post-title a:hover {
-  color: var(--color-link-hover);
-}
-
-.post-date {
-  text-align: right;
-  font-size: var(--fs-md);
-  color: var(--color-secondary-text);
-  white-space: nowrap;
-}
-
-/* Mobile Responsive Styles */
-@media screen and (max-width: 720px) {
-  main {
-    padding: var(--fs-sm);
-    max-width: var(--main-mobile-max-width);
-    line-height: var(--f-line-height-body);
-    flex: 1;
-    box-sizing: border-box;
-  }
-
-  .navigation {
-    display: block;
-    position: relative;
-    padding: var(--fs-xs);
-    margin-right: 0;
-    top: 0;
-    border-radius: 0;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .nav-links a::before {
-    display: none;
-  }
-
-  .nav-links a:hover {
-    color: var(--color-secondary-text);
-  }
-
-  .nav-links {
-    display: flex;
-    padding: 3px 20px 10px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 60vw;
-    max-width: 100vw;
-    height: 100vh;
-    gap: 4rem;
-    background-color: var(--main-mobile-bg-color);
-    z-index: 1001;
-    transform: translateX(100%) scale(0.98);
-    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),
-      opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-    opacity: 0;
-    pointer-events: none;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-}
-
-/*Footersocials styling*/
-.footer-social-links {
+/* About & projects page */
+#aboutpg,
+#projectspg {
+  /* Layout */
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  /* Box model */
+  width: min(100% - 2em, 720px);
+  margin: auto;
 }
 
-.footer-social-link {
-  width: 20px;
-  height: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/*  ==========================================================================
+    Sections
+    ========================================================================== */
+
+/*  Default section styling
+    Used for consistent padding and centering across all sections.
+    ========================================================================== */
+section {
+  width: min(100% - 2em, 720px);
+  margin-inline: auto;
+  padding-block: 6rem;
+  box-sizing: border-box;
 }
 
-.footer-social-link img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
+/*  ==========================================================================
+    Typography: Main Paragraph
+    ========================================================================== */
 
-.footer-social-link:hover img {
-  transform: scale(1.1);
-}
-
-@media screen and (max-width: 480px) {
-
-  body {
-    font-size: var(--fs-xxs);
-  }
-
-  .footer-social-links {
-    gap: 0.75rem;
-    margin-top: 0.75rem;
-  }
-
-  .footer-social-link {
-    width: 28px;
-    height: 28px;
-  }
-
-  .footer-social-link img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/*Credit Link Style*/
-.credit {
-  margin: 0;
-  padding: 0.625rem;
-  text-align: center;
-  font-size: var(--fs-xxs);
-}
-
-.credit a {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-link);
-  font-size: var(--fs-xxs);
-  position: relative;
-  color: var(--color-text);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.credit a:hover {
-  color: #deedee;
-}
+/*  Main paragraph text
+    Used for the primary content paragraphs across Home, About, and Projects pages.
+    ========================================================================== */
 
 .p-main {
-  color: #a4b8dd;
-  line-height: 1.625;
+  /* Typography */
+  color: var(--color-secondary-text);
+
+  /* Box model */
+  margin-top: 1.25rem;
 }
 
+/*  Inline links within main paragraphs
+    Styled links with animated underline and color transition.
+    ========================================================================== */
+
 .p-main a {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-body);
+  /* Positioning */
   position: relative;
+  display: inline-block;
+
+  /* Typography & visual */
   color: var(--color-link);
   text-decoration: none;
+
+  /* Animation */
   transition: color 0.3s ease;
 }
 
+/* Underline effect (hidden by default) */
 .p-main a::before {
   content: "";
   position: absolute;
-  width: 0;
-  bottom: 0;
-  height: 1px;
   left: 0;
-  background-color: var(--color-link);
-  transition: width 0.2s ease;
+  bottom: 0;
+
+  /* Box model */
+  width: 0;
+  height: 1px;
+
+  /* Visual */
+  background-color: var(--color-link-hover);
+  transition: 0.2s ease-in;
 }
 
+/* State */
 .p-main a:hover {
-  transition: color 0.1s ease;
+  transition: color 0.2s ease-out;
+  color: var(--color-link-hover);
 }
 
+/* Underline animation */
 .p-main a:hover::before {
   width: 100%;
 }
 
-/* Projects Styling */
-.project {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.highlight-skill {
+  color: var(--color-highlight-text);
+  font-weight: 400;
+}
+
+.highlight-cta {
   color: var(--color-link);
-  padding: 0;
-  list-style: none;
-  margin-bottom: 3rem;
-  gap: 0.5rem 0.0175rem;
-  ;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
-.technologies-used {
-  background-color: rgba(45, 212, 191, 0.1);
-  color: var(--color-link);
-  border-radius: 10px;
-  padding: 0.25rem 0.75rem;
-  margin-right: 0.5rem;
-  box-shadow: inset 0 0 0 1px #fff3, 0 1px 1px rgba(45, 212, 191, 0.8);
-  box-sizing: border-box;
-}
+/*  ==========================================================================
+    Typography: Headings and Images
+    ========================================================================== */
 
-/* Footer Styling */
-.social-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.social-link {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  width: 20px;
-  height: 20px;
-}
+/*  Global image styling.
+    ========================================================================== */
 
 img {
+  /* Box model */
+  display: block;
   max-width: 100%;
   height: auto;
+
+  /* Visual */
   object-fit: contain;
-  display: block;
 }
 
-.custom_footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.625rem;
-  padding: 15px;
-  height: auto;
-  color: var(--color-h2);
+/*   Headings.
+    ========================================================================== */
 
-  margin-top: auto;
-}
-
-/*Header Styles */
+/* H1 main page headers */
 h1 {
+  /* Typography */
   color: var(--color-h1);
+  font-weight: var(--font-weight-li);
+  font-size: var(--fs-heading);
+
+  /* Box model */
   margin: 0 0 0.875rem 0.25rem;
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-h1-light);
-  font-size: var(--fs-sm), var(--fs-md);
 }
 
+/* H2 section titles */
 h2 {
+  /* Typography */
   color: var(--color-h2);
-  font-family: var(--font-family);
   font-weight: var(--font-weight-h2);
   font-size: var(--fs-sm), var(--fs-md);
   line-height: var(--f-line-height-body);
-  margin-top: 0px;
-  margin-bottom: 0px;
+
+  /* Box model */
+  margin: 0;
 }
 
+/* H2 large heading */
 h2.big-heading {
+  /* Typography */
   color: var(--color-h2);
-  margin: 0px;
-  font-family: var(--font-family);
   font-weight: var(--font-weight-h2);
   font-size: var(--fs-heading-lg);
+
+  /* Box model */
+  margin: 0;
 }
 
+/* H3 subsection titles */
 h3 {
+  /* Typography */
   color: var(--color-h3);
-  margin: 0;
-  font-family: var(--font-family);
   font-weight: var(--font-weight-h3);
   font-size: var(--fs-lg);
+  line-height: var(--f-line-height-heading);
+
+  /* Box model */
+  margin: 0;
 }
 
+/* H3 large heading */
 h3.big-heading {
+  /* Typography */
   color: var(--color-h3);
-  margin: 0;
-  font-family: var(--font-family);
   font-weight: var(--font-weight-h3);
   font-size: var(--fs-heading-lg);
+
+  /* Box model */
+  margin: 0;
 }
 
-p {
-  color: var(--color-secondary-text);
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-body);
-  font-size: var(--fs-md);
-  margin-top: 1.25rem;
-}
+/*  Unordered project technologies list within main paragraphs
+    Styled list with glow and button effect.
+    ========================================================================== */
 
-ul.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0 10px;
-  list-style-type: none;
+.project {
+  /* Positioning */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.0175rem;
+
+  /* Box model */
+  margin-bottom: 3rem;
   padding: 0;
-  margin: 0;
+  justify-content: flex-start;
+
+  /* Visual */
+  color: var(--color-link);
+  list-style: none;
 }
 
-li.skill-item {
-  color: var(--color-secondary-text);
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-li);
-  font-size: var(--fs-md);
-  margin: 0;
+.technologies-used {
+  /* Positioning */
+  background-color: rgba(45, 212, 191, 0.1);
+  color: var(--color-link);
+  border-radius: 10px;
+
+  /* Box model */
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  box-sizing: border-box;
+
+  /* Visual */
+  box-shadow:
+    inset 0 0 0 1px #fff3,
+    0 1px 1px rgba(45, 212, 191, 0.8);
 }
+
+/*  ==========================================================================
+    Footer: Credit and Container
+    ========================================================================== */
+
+/*  Footer container
+    Houses all footer content including social links and credits.
+    ========================================================================== */
+
+.custom_footer {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-family-footer);
+  font-weight: 300;
+
+  /* Box model */
+  padding: 15px;
+  margin-top: auto;
+  height: auto;
+
+  /* Typography */
+  color: var(--color-secondary-text);
+}
+
+/*Footersocials styling*/
+.footer-social-links {
+  /* Layout */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* Box model */
+  margin-top: 1rem;
+}
+
+/*  Individual social link icons
+    Each icon is a clickable image linking to an external page.
+    ========================================================================== */
+
+.footer-social-link {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Box model */
+  width: 26px;
+  height: 26px;
+  padding: 10px;
+}
+
+/*  Icon visuals
+    The icon image fills its parent container and scales on hover.
+    ========================================================================== */
+
+.footer-social-link img {
+  /* Display & sizing */
+  display: block;
+  width: 100%;
+  height: auto;
+
+  /* Animation */
+  transition: transform 0.3s ease;
+}
+/* Effects */
+.footer-social-link:hover img {
+  transform: scale(1.1);
+}
+
+/*  Credit text
+    Displays site credits.
+    ========================================================================== */
+
+.credit {
+  /*Box model*/
+  margin: 0;
+  padding: 0.625rem;
+
+  /* Typography */
+  text-align: center;
+  font-size: var(--fs-xs);
+}
+
+/*  Credit links
+    Interactive links within the credit text.
+    ========================================================================== */
+
+.credit a {
+  /* Typography */
+  font-weight: var(--font-weight-link);
+  color: var(--color-credit-text);
+  text-decoration: none;
+
+  /* Positioning */
+  position: relative;
+
+  /* Animation */
+  transition: color 0.3s ease;
+}
+/* State */
+.credit a:hover {
+  color: var(--color-credit-link-hover);
+}
+
+/*  ==========================================================================
+    Animations and Cursor Effects
+    ========================================================================== */
+
+/*  Typing cursor effect
+    ========================================================================== */
 
 .cursor {
+  /* Display & positioning */
   display: inline-block;
+
+  /* Box model */
   margin-left: 4px;
+
+  /* Visual */
   color: var(--color-link);
   opacity: 1;
+
+  /* Animation */
   transition: opacity 0.2s ease-in-out;
 }
 
+/* Cursor blink animation */
 .cursor.blink {
   animation: blink 1.2s ease-in-out infinite;
 }
 
-@keyframes blink {
+/*  Keyframes
+    ========================================================================== */
 
+/* Blink animation: fades cursor in and out repeatedly */
+@keyframes blink {
   0%,
   100% {
     opacity: 1;
@@ -688,6 +845,7 @@ li.skill-item {
   }
 }
 
+/* Fade-in animation: used for main page entry transitions */
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -696,4 +854,211 @@ li.skill-item {
   100% {
     opacity: 1;
   }
+}
+
+/*  ==========================================================================
+    Responsive
+    ========================================================================== */
+/* 
+    Extra large screens (1440px)
+    ========================================================================== */
+@media screen and (max-width: 1440px) {
+}
+
+/* 
+    Large screens (1280px)
+    ========================================================================== */
+@media screen and (max-width: 1280px) {
+}
+
+/* 
+    Desktop screens (1024px)
+    ========================================================================== */
+@media screen and (max-width: 1024px) {
+}
+
+/* Visual */
+.nav-toggle {
+  display: none;
+}
+/*
+    Medium screens (768px)
+    ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  /*  ==========================================================================
+    Header
+    ========================================================================== */
+
+  header {
+    /* Positioning */
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+
+    /* Box model */
+    padding: 0 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+    /* Viusal reset for mobile */
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  /*  ==========================================================================
+    Menu Toggle Button
+    ========================================================================== */
+
+  .nav-toggle {
+    /* Box model */
+    display: inline-block;
+    margin-left: auto;
+    padding: 0.9rem 0.9rem;
+
+    /* Visual */
+    background: rgba(10, 25, 47, 0.8);
+    border: 1px solid #ffffff33;
+    border-radius: 999px;
+    color: var(--color-link);
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+  }
+
+  /*  ==========================================================================
+    Mobile Menu Panel
+    ========================================================================== */
+
+  .mobile-menu {
+    /* Positioning */
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    /* Box model*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+
+    /* Visual */
+    background: rgba(10, 25, 47, 1);
+
+    /*  Animation
+    ========================================================================== */
+
+    /* Start invisible: clip circle is tiny at the button's corner */
+    clip-path: circle(0% at calc(100% - 2.5rem) 2.5rem);
+    transition: clip-path var(--menu-transition-duration)
+      cubic-bezier(0.42, 0, 0.58, 1);
+  }
+  /* When menu is open, expand circle to cover full screen */
+  .mobile-menu.is-open {
+    clip-path: circle(150% at calc(100% - 2.5rem) 2.5rem);
+    background: rgba(10, 25, 47, 1);
+  }
+
+  /* Prevent background scroll when menu is open */
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  /*  ==========================================================================
+    Menu links
+    ========================================================================== */
+
+  /* Box model */
+  .mobile-menu a.mobile-nav {
+    margin: 0.75rem 0;
+
+    /* Typography */
+    font-size: var(--fs-xxl);
+
+    /* Animation (initial hidden state) */
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    filter: blur(4px);
+    transition:
+      opacity 0.4s ease 0.4s,
+      transform 0.4s ease 0.4s,
+      filter 0.4s ease 0.4s;
+  }
+
+  /* Fade-in & slide up as the circle expands */
+  .mobile-menu.is-open a {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  /* Sync appearance with circle expansion (opening) */
+  .mobile-menu.is-open a:nth-child(1) {
+    transition-delay: calc(var(--menu-transition-duration) / 2);
+  }
+  .mobile-menu.is-open a:nth-child(2) {
+    transition-delay: calc(var(--menu-transition-duration) / 2 + 0.1s);
+  }
+  .mobile-menu.is-open a:nth-child(3) {
+    transition-delay: calc(var(--menu-transition-duration) / 2 + 0.2s);
+  }
+  .mobile-menu.is-open a:nth-child(4) {
+    transition-delay: calc(var(--menu-transition-duration) / 2 + 0.3s);
+  }
+
+  /* Sync appearance with circle fade out (closing) */
+  .mobile-menu:not(.is-open) a {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    filter: blur(4px);
+  }
+
+  /* Staggered exit timing (closing) */
+  .mobile-menu:not(.is-open) a:nth-child(4) {
+    transition-delay: 0s;
+  }
+  .mobile-menu:not(.is-open) a:nth-child(3) {
+    transition-delay: calc(var(--menu-transition-duration) / 10);
+  }
+  .mobile-menu:not(.is-open) a:nth-child(2) {
+    transition-delay: calc(var(--menu-transition-duration) / 5);
+  }
+  .mobile-menu:not(.is-open) a:nth-child(1) {
+    transition-delay: calc(var(--menu-transition-duration) / 3);
+  }
+}
+
+/* 
+    Small screens (480px)
+    ========================================================================== */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* 
+    Large mobiles (425px)
+    ========================================================================== */
+@media screen and (max-width: 425px) {
+  /* adjustments here */
+}
+
+/* 
+    Medium mobiles (375px)
+    ========================================================================== */
+@media screen and (max-width: 375px) {
+  /* adjustments here */
+}
+
+/* 
+    Small mobiles (320px)
+    ========================================================================== */
+@media screen and (max-width: 320px) {
 }

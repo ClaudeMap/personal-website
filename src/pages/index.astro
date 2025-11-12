@@ -11,15 +11,86 @@ const identity = {
 };
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <main class='homepg'>
-    <section>
-      <h1>Hi, my name is</h1>
-      <h2 class='big-heading'>{identity.firstName}</h2>
-      <h3 class='big-heading'>I design and build</h3>
-      <h3 class='big-heading'>
-        <span id='typed-word'>experiences</span><span class='cursor'>|</span>
-      </h3>
-    </section>
-  </main>
+<BaseLayout pageTitle={pageTitle} sectionId='homepg' isHero>
+  <h1>Hi, my name is</h1>
+  <h2 class='big-heading'>{identity.firstName}</h2>
+  <h3 class='big-heading'>I design and build</h3>
+  <h3 class='big-heading'>
+    <span id='typed-word'>experiences</span><span class='cursor'>|</span>
+  </h3>
 </BaseLayout>
+<script type='module'>
+  const onPageReady = (callback) => {
+    document.addEventListener("astro:page-load", callback);
+    document.addEventListener("astro:after-swap", callback);
+  };
+  function startTyping() {
+    const words = ["experiences", "apps", "systems", "products", "prototypes"];
+    const typedWord = document.getElementById("typed-word");
+    const cursor = document.querySelector(".cursor");
+
+    if (!typedWord || !cursor) return;
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingTimeout;
+    let isPaused = false;
+
+    const type = () => {
+      const currentWord = words[wordIndex];
+      const displayedText = currentWord.substring(0, charIndex);
+      typedWord.textContent = displayedText;
+
+      // Disable blinking while typing
+      cursor.classList.remove("blink");
+
+      if (!isDeleting && charIndex < currentWord.length) {
+        //typing
+        charIndex++;
+        setTimeout(type, 100);
+      } else if (isDeleting && charIndex > 0) {
+        //deleting
+        charIndex--;
+        setTimeout(type, 60);
+      } else {
+        // Pause before deleting/moving to next word enable blinking
+        cursor.classList.add("blink");
+        isDeleting = !isDeleting;
+        if (!isDeleting) {
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+        setTimeout(type, 1000);
+      }
+    };
+
+    const pauseTyping = () => {
+      isPaused = true;
+      clearTimeout(typingTimeout);
+    };
+
+    const resumeTyping = () => {
+      if (!isPaused) return;
+      isPaused = false;
+      type();
+    };
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        pauseTyping();
+      } else {
+        resumeTyping();
+      }
+    });
+
+    type();
+
+    // Stop typing when leaving the page
+    document.addEventListener(
+      "astro:before-preparation",
+      () => clearTimeout(typingTimeout),
+      { once: true }
+    );
+  }
+  onPageReady(startTyping);
+</script>

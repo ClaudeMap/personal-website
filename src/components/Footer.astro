@@ -1,38 +1,81 @@
 ---
-import Social from "./Social.astro";
+const socialLinks = [
+  {
+    href: "https://www.github.com/ClaudeMap",
+    target: "blank",
+    rel: "noreferrer noopener",
+    imgSrc: "/icons/Github.svg",
+    alt: "GitHub",
+    ariaLabel: "GitHub (opens in a new tab)",
+  },
+  {
+    href: "https://www.linkedin.com/in/claude-m-b24795222/",
+    target: "blank",
+    rel: "noreferrer noopener",
+    imgSrc: "/icons/Linkedin.svg",
+    alt: "LinkedIn",
+    ariaLabel: "LinkedIn (opens in a new tab)",
+  },
+  {
+    href: "mailto:mailto:claude.mapara@hotmail.co.uk",
+    target: "blank",
+    rel: "noreferrer noopener",
+    imgSrc: "/icons/Email.svg",
+    alt: "Email",
+    ariaLabel: "Email",
+  },
+];
+
+const creditLinks = [
+  {
+    prefix: "Designed in",
+    name: "Figma.",
+    href: "https://www.figma.com",
+    ariaLabel: "Figma (opens in a new tab)",
+  },
+  {
+    prefix: "Built in",
+    name: "VS Code.",
+    href: "https://code.visualstudio.com",
+    ariaLabel: "Visual Studio Code (opens in a new tab)",
+  },
+  {
+    prefix: "Shipped with",
+    name: "Netlify.",
+    href: "https://www.netlify.com/",
+    ariaLabel: "Netlify (opens in a new tab)",
+  },
+];
 ---
 
 <footer class='custom_footer'>
   <div class='footer-social-links'>
-    <div class='footer-social-link'>
-      <Social platform='Github' username='ClaudeMap' />
-    </div>
-    <div class='footer-social-link'>
-      <Social platform='Linkedin' username='claude-m-b24795222' />
-    </div>
-    <div class='footer-social-link'>
-      <a href='mailto:claude.mapara@hotmail.co.uk' aria-label='Email'>
-        <img src='/icons/Email.svg' alt='Email' />
-      </a>
-    </div>
+    {
+      socialLinks.map((link) => (
+        <div class='footer-social-link'>
+          <a
+            href={link.href}
+            target={link.target}
+            rel={link.rel}
+            aria-label={link.ariaLabel}
+          >
+            <img src={link.imgSrc} alt={link.alt} />
+          </a>
+        </div>
+      ))
+    }
   </div>
 
   <p class='credit'>
-    Designed in <a class="experience"
-      href='https://www.figma.com'
-      target='blank'
-      rel='noreferrer noopener'
-      aria-label='Figma (opens in a new tab)'>Figma</a
-    >. Built in <a
-      href='https://code.visualstudio.com'
-      target='_blank'
-      rel='noreferrer noopener'
-      aria-label='Visual Studio Code (opens in a new tab)'>VS Code</a
-    >. Shipped with <a
-      href='https://www.netlify.com/'
-      target='_blank'
-      rel='noreferrer noopener'
-      aria-label='Netlify (opens in a new tab)'>Netlify</a
-    >.
+    {
+      creditLinks.map((link) => (
+        <span>
+          {link.prefix}
+          <a name={link.name} href={link.href} aria-label={link.ariaLabel}>
+            {link.name}
+          </a>
+        </span>
+      ))
+    }
   </p>
 </footer>
