@@ -1,55 +1,86 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const navigationList = document.querySelector(".styled-list");
-  const navLinks = document.querySelectorAll(".styled-list a");
-  const overlay = document.querySelector(".nav-overlay");
+document.addEventListener("astro:page-load", () => {
+  const btn = document.querySelector(".nav-toggle");
+  const panel = document.getElementById("mobile-menu");
+  if (!btn || !panel) return;
 
-  const closeMenu = () => {
-    if (!navigationList.classList.contains("expanded")) return;
-
-    navigationList.classList.remove("expanded");
-    navigationList.classList.add("closing");
-    hamburger.classList.remove("active");
-
-    const onTransitionEnd = (e) => {
-      if (e.propertyName === "transform") {
-        document.body.classList.remove("menu-open-blur");
-        document.body.classList.remove("expanded");
-        navigationList.classList.remove("closing");
-        navigationList.removeEventListener("transitionend", onTransitionEnd);
-      }
-    };
-
-    navigationList.addEventListener("transitionend", onTransitionEnd);
+  const open = () => {
+    panel.hidden = false;
+    panel.classList.add("is-open");
+    btn.setAttribute("aria-expanded", "true");
+    document.body.classList.add("no-scroll");
   };
 
-  if (overlay) {
-    overlay.addEventListener("click", closeMenu);
-  }
-
-  if (hamburger && navigationList) {
-    hamburger.addEventListener("click", () => {
-      navigationList.classList.toggle("expanded");
-      hamburger.classList.toggle("active");
-      document.body.classList.toggle("menu-open-blur");
-      document.body.classList.toggle("expanded");
+  const close = () => {
+    panel.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("no-scroll");
+    panel.addEventListener("transitionend", () => (panel.hidden = true), {
+      once: true,
     });
+  };
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
+  btn.addEventListener("click", () => {
+    const isOpen = panel.classList.contains("is-open");
+    isOpen ? close() : open();
+  });
 
-    document.addEventListener("click", (event) => {
-      const isClickInsideMenu = navigationList.contains(event.target);
-      const isClickOnHamburger = hamburger.contains(event.target);
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && panel.classList.contains("is-open")) close();
+  });
 
-      if (
-        navigationList.classList.contains("expanded") &&
-        !isClickInsideMenu &&
-        !isClickOnHamburger
-      ) {
-        closeMenu();
-      }
-    });
-  }
+  // Nav close (when clicking a link)
+  panel.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+  });
+
+  // Only apply delay if menu is visible (mob open state)
+  const isMobMenuActive =
+    window.getComputedStyle(btn).display !== "none" &&
+    panel.classList.contains("is-open");
+
+  if (!isMobMenuActive) return;
+
+  // Stop Astro’s instant navigation
+  e.preventDefault();
+
+  // Trigger the closing animation
+  panel.classList.remove("is-open");
+  btn.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("no-scroll");
+
+  let didTransition = false;
+
+  const navigate = () => {
+    panel.hidden = true;
+    if (window.Astro?.router?.navigate) {
+      Astro.router.navigate(a.getAttribute("href"));
+    } else if (window.Astro?.navigate) {
+      Astro.navigate(a.getAttribute("href"));
+    } else {
+      window.location.href = a.href;
+    }
+  };
+
+  // listen for the clip-path transition end
+  const onTransitionEnd = (e) => {
+    if (e.propertyName !== "clip-path") return;
+    didTransition = true;
+    panel.removeEventListener("transitionend", onTransitionEnd);
+    navigate();
+  };
+  panel.addEventListener("transitionend", onTransitionEnd);
+
+  // Fallback if the event doesnt fire
+  const duration =
+    parseFloat(
+      getComputedStyle(panel).getPropertyValue("--menu-transition-duration")
+    ) * 1000 || 600;
+  setTimeout(() => {
+    if (!didTransition) {
+      console.warn("Transitionend not fired; using fallback navigation.");
+      navigate();
+    }
+  }, duration + 100);
 });
