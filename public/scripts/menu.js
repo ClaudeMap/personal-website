@@ -19,6 +19,11 @@ document.addEventListener("astro:page-load", () => {
     });
   };
 
+  const closeBtn = panel.querySelector(".nav-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", close);
+  }
+
   btn.addEventListener("click", () => {
     const isOpen = panel.classList.contains("is-open");
     isOpen ? close() : open();
