@@ -1,10 +1,10 @@
-document.addEventListener("astro:page-load", () => {
-  const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
-  document.querySelectorAll("a").forEach((link) => {
-    const href = link.getAttribute("href");
+document.addEventListener("astro:page-load", (): void => {
+  const currentPath: string = window.location.pathname.replace(/\/$/, "") || "/";
+  document.querySelectorAll<HTMLAnchorElement>("a").forEach((link: HTMLAnchorElement) => {
+    const href: string | null = link.getAttribute("href");
     if (!href || href.startsWith("http")) return; 
 
-    const normalized = href.replace(/\/$/, "") || "/";
+    const normalized: string = href.replace(/\/$/, "") || "/";
     if (normalized === currentPath) {
       link.classList.add("active");
     } else {
