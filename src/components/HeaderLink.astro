@@ -5,8 +5,8 @@ type Props = HTMLAttributes<"a">;
 const { href, class: className, ...props } = Astro.props;
 const { pathname } = Astro.url;
 
-const normalize = (path) => path.replace(/\/$/, "") || "/";
-const isActive = normalize(href) === normalize(pathname);
+const normalize = (path: string) => path.replace(/\/$/, "") || "/";
+const isActive = typeof href === "string" && normalize(href) === normalize(pathname);
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}
