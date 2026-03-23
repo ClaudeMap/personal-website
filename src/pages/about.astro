@@ -4,55 +4,59 @@ import BaseLayout from "../layout/BaseLayout.astro";
 const pageTitle = "Claude Mapara";
 
 const identity = {
-  firstName: "Claude",
-  location: "London",
   occupation: "software engineer",
-  company: "IBM",
+  company: ["Lockheed Martin", "IBM"],
 };
 ---
 
 <BaseLayout pageTitle={pageTitle} sectionId='aboutpg'>
   <p class='p-main'>
-    I’m a {identity.occupation} with a background in <span
-      class='highlight-skill'>building secure, scalable systems</span
-    > across full-stack platforms. I’ve <span class='highlight-skill'
-      >shipped products from 0 → 1</span
-    > across a range of settings, from <span class='highlight-skill'
-      >large corporations to startups</span
-    > and small businesses. You'll find me working across backend development,<span
-      class='highlight-skill'
-    >
-      optimising for performance, reliability, and scale.</span
-    > As well as frontend interfaces, helping <span class='highlight-skill'
-      >design intuitive, low-friction UX</span
-    > for idea-to-deploy experiences using modern frameworks to turn ideas into working
-    apps.
-  </p>
-  <p class='p-main'>
-    Currently, I'm at <a
+    I build <span class='highlight-skill'>software that works at scale</span>,
+    across<span class='highlight-skill'> cyber, defence</span> and <span
+      class='highlight-skill'>intelligence</span
+    > at <a
+      href='https://www.lockheedmartin.com/'
+      target='_blank'
+      rel='noopner noreferrer'><span>{identity.company[0]}</span></a
+    >, and previously <span class='highlight-skill'
+      >built systems that gave distributed teams secure, reliable access</span
+    > to what they <span class='highlight-skill'>needed</span> at <a
       href='https://www.ibm.com/uk-en'
       target='_blank'
-      rel='noopner noreferrer'>{identity.company}</a
-    > building a <span class='highlight-skill'
-      >platform enabling access for distributed teams</span
-    >. I contribute to the design and delivery of backend services, and help
-    improve team workflows, focusing on <span class='highlight-skill'
-      >scalable service logic and clear system interfaces</span
-    >. <p class='p-main'>
-      I care about <span class='highlight-skill'
-        >writing clear, maintainable code</span
-      >, <span class='highlight-skill'>building systems that hold up
-      under pressure</span>, and <span class="highlight-skill">simplifying things that don’t need to be complicated</span>.
-      In my spare time, I can be found working out,<span class="highlight-skill"> trying out new restaurants</span>,
-      attending the occasional music or art fair, or <span class="highlight-skill">researching tech</span> I may or
-      may not use.
-    </p>
+      rel='noopner noreferrer'
+      ><span class='highlight-skill'>{identity.company[1]}</span></a
+    >. Along the way I've taken products from <span class='highlight-skill'
+      >0 → 1</span
+    > across <span class='highlight-skill'>large corporations, startups,</span> and
+    <span class='highlight-skill'>small businesses</span>.
   </p>
-
   <p class='p-main'>
-    If any of that resonates and you’d like to chat about <span class="highlight-skill">work, projects, or
-    anything in between</span>, <a
-    class="highlight-cta"
+    My focus tends to be <span class='highlight-skill'
+      >backend systems, cloud platforms,
+    </span>and <span class='highlight-skill'>full-stack applications</span>,
+    places where <span class='highlight-skill'
+      >engineering quality, clear architecture,
+    </span>and <span class='highlight-skill'>reliability</span> actually matter.
+    What <span class='highlight-skill'>keeps me building,</span> is <span
+      class='highlight-skill'
+      >seeing code I wrote help real people at scale</span
+    >. What <span class='highlight-skill'>keeps me sane,</span> is <span
+      class='highlight-skill'
+      >refusing to make things more complicated than they need to be</span
+    >.
+  </p>
+  <p class='p-main'>
+    Outside of engineering, I've spent <span class='highlight-skill'
+      >years training</span
+    >, it's where I built most of my <span class='highlight-skill'
+      >discipline and consistency</span
+    >, and it still shapes how I show up to most things. I travel when I can,
+    and I'm usually turning over an <span class='highlight-skill'
+      >idea or two on the side</span
+    >.
+  </p><p class='p-main'>
+    If you'd like to chat about work, a project, or something you're building, <a
+      '
       href='mailto:claude.mapara@hotmail.co.uk'
       target='_blank'
       rel='noopner noreferrer'
