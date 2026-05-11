@@ -681,6 +681,10 @@ h3.big-heading {
   list-style: none;
 }
 
+h3.projectHeading {
+  color: var(--color-link)
+}
+
 .technologies-used {
   /* Positioning */
   background-color: rgba(45, 212, 191, 0.1);
