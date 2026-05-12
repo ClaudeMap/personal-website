@@ -3,6 +3,11 @@ document.addEventListener("astro:page-load", () => {
   const panel = document.getElementById("mobile-menu");
   if (!btn || !panel) return;
 
+  function handleMenuClick() {
+    const isOpen = panel.classList.contains("is-open");
+    isOpen ? close() : open();
+  }
+
   const open = () => {
     panel.hidden = false;
     panel.classList.add("is-open");
@@ -24,15 +29,18 @@ document.addEventListener("astro:page-load", () => {
     closeBtn.addEventListener("click", close);
   }
 
-  btn.addEventListener("click", () => {
-    const isOpen = panel.classList.contains("is-open");
-    isOpen ? close() : open();
-  });
+  btn.removeEventListener("click", handleMenuClick);
+  btn.addEventListener("click", handleMenuClick);
 
   // Close on Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && panel.classList.contains("is-open")) close();
-  });
+  function handleKeyDown(e) {
+    if (e.key === "Escape" && panel.classList.contains("is-open")) {
+      close();
+    }
+  }
+
+  document.removeEventListener("keydown", handleKeyDown);
+  document.addEventListener("keydown", handleKeyDown);
 
   // Nav close (when clicking a link)
   panel.addEventListener("click", (e) => {
@@ -79,7 +87,7 @@ document.addEventListener("astro:page-load", () => {
     // Fallback if the event doesnt fire
     const duration =
       parseFloat(
-        getComputedStyle(panel).getPropertyValue("--menu-transition-duration")
+        getComputedStyle(panel).getPropertyValue("--menu-transition-duration"),
       ) * 1000 || 600;
 
     setTimeout(() => {
