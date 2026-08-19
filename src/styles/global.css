@@ -263,6 +263,9 @@
   --scrollbar-color: #94a3b8;
   --nav-header-height: 45px;
 
+  /*Accents */
+  --color-accent-warm: #b8a8c4;
+
   /*  ==========================================================================
       Transitions
       ========================================================================== */
@@ -700,6 +703,15 @@ h3.projectHeading {
   font-size: var(--fs-md);
 }
 
+.projectDiscipline {
+  color: var(--color-accent-warm);
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-body);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: var(--f-line-height-body);
+}
+
 /*  ==========================================================================
     Footer: Credit and Container
     ========================================================================== */
@@ -1115,6 +1127,9 @@ h3.projectHeading {
 @media screen and (max-width: 480px) {
   body {
     font-size: var(--fs-lg);
+  }
+  .projectDiscipline {
+    font-size: var(--fs-sm);
   }
 }
 
