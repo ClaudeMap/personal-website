@@ -6,67 +6,134 @@ const pageTitle = "Claude Mapara";
 
 <BaseLayout pageTitle={pageTitle} sectionId='projectspg'>
   <div>
-    <h3 class="projectHeading">Event-Driven Deployment System</h3>
+    <h3 class="projectHeading">Praetor</h3>
+    <p class="projectDiscipline">AI | Agents | Governance | LLM Infra</p>
     <p class='p-main'>
-      Built backend services and identity workflows for a secure, event-driven
-      platform used across distributed cybersecurity environments. Collaborated
-      within a 7-engineer team to deliver protected access at scale, processing
-      thousands of requests per minute through AWS services including DynamoDB,
-      CloudFront, and Lambda.
+      Praetor is a governance-first AI orchestrator for legacy-to-cloud
+      migration in regulated enterprise environments. The reasoning pipeline is
+      decomposed into isolated agent stages (assessment, design and
+      visualisation), each with typed handoffs, human-in-the-loop gates, and
+      auditable outputs. A single-model chain provides neither the traceability
+      nor the review points a regulated migration needs.
+    </p>
+    <p class="p-main">
+      Built on open-weight models (Gemma 4, GPT-OSS) rather than closed APIs so
+      the full chain stays inside the trust boundary, with retrieval on Weaviate
+      and evaluation via DeepEval.
+    </p>  
+    <ul class='project'>
+      <li class='technologies-used'>Python</li>
+      <li class='technologies-used'>LangChain</li>
+      <li class='technologies-used'>Weaviate</li>
+      <li class='technologies-used'>DeepEval</li>
+      <li class='technologies-used'>Gemma 4 (E4B, 26B)</li>
+      <li class='technologies-used'>GPT-OSS 120B</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="projectHeading">Automation & Intelligence Layer</h3>
+    <p class="projectDiscipline">Automation | AI | LLM Infra | Backend</p>
+    <p class='p-main'>
+      Custom internal tooling for a boutique services firm, composed of a
+      Python monorepo of research pipelines and a composable skill library that
+      accelerates back-office operations.
+    </p>
+    <p class="p-main">
+      The skill library follows a microservices pattern: atomic reference skills
+      composed by task skills, so each dimension of an output is independently
+      versionable and regression-tested via an Expected / Defect / Undocumented
+      grading framework. Direct prompting doesn't scale for domain-specific work
+      where consistency drifts without a testable surface. Research pipelines
+      transform raw external data into structured, ranked signals suitable for
+      downstream decisions. Operational data lives in a Notion layer of eight
+      linked databases, modelled relationally.
     </p>
     <ul class='project'>
-      <div class='technologies-used'><li>JavaScript</li></div>
-      <div class='technologies-used'><li>TypeScript</li></div>
-      <div class='technologies-used'><li>React</li></div>
-      <div class='technologies-used'><li>AWS</li></div>
-      <div class='technologies-used'><li>Node.js</li></div>
+      <li class='technologies-used'>Python</li>
+      <li class='technologies-used'>Anthropic API</li>
+      <li class='technologies-used'>Claude Code</li>
+      <li class='technologies-used'>Notion</li>
+      <li class='technologies-used'>Git</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="projectHeading">Editorial Site & Design System</h3>
+    <p class="projectDiscipline">Design | Development | Design System | Motion</p>
+    <p class='p-main'>
+      An editorial site for a luxury lifestyle brand, featuring a bespoke Astro
+      build with a design system and page motion, built to read as an editorial
+      property rather than a service page.
+    </p>
+    <p class="p-main">
+      Astro over Next.js: the site is content-heavy and interaction-light, so
+      SSR was overhead the site didn't need, and shipping minimal JS mattered
+      more than framework ergonomics. Colour runs a role-token layer over
+      palette tokens, so seasonal cadence shifts happen as atomic edits rather
+      than a repo-wide sweep. Page transitions use a bespoke GSAP curtain over
+      Astro's default cross-fade, with the logo drawn onto the curtain via
+      drawSVG, timed to the lift.
+    </p>
+    <ul class='project'>
+      <li class='technologies-used'>Astro</li>
+      <li class='technologies-used'>TypeScript</li>
+      <li class='technologies-used'>Tailwind CSS v4</li>
+      <li class='technologies-used'>GSAP</li>
+      <li class='technologies-used'>Lenis</li>
+      <li class='technologies-used'>Astro ClientRouter</li>
+      <li class='technologies-used'>Figma</li>
+
+    </ul>
+  </div>
+  <div>
+    <h3 class="projectHeading">Event-Driven Deployment System</h3>
+    <p class="projectDiscipline">Backend | Cloud | Distributed Systems | Security</p>
+    <p class='p-main'>
+      Distributed cybersecurity operations run in environments with unreliable
+      network coverage. The platform had to keep working under constrained
+      conditions and stay auditable for government users. 
+    </p>
+    <p class="p-main">
+      Built on event-driven, serverless AWS primitives (Lambda, DynamoDB,
+      CloudFront) for fault isolation and predictable performance across loosely
+      coupled services. Applied domain-driven design and standards-based
+      identity (OAuth2, Cognito) so downstream teams weren't paying the
+      cognitive cost of ad-hoc APIs. Adaptive caching, capacity tuning and event
+      orchestration cut throughput and latency by 40%. Seven-engineer team, with
+      responsibility across backend services, identity workflows, and
+      observability.
+    </p>
+    <ul class='project'>
+      <li class='technologies-used'>JavaScript</li>
+      <li class='technologies-used'>TypeScript</li>
+      <li class='technologies-used'>React</li>
+      <li class='technologies-used'>AWS</li>
+      <li class='technologies-used'>Node</li>
     </ul>
   </div>
   <div>
     <h3 class="projectHeading">Health Platform</h3>
+    <p class="projectDiscipline">Backend | Database | Data Governance | Public Sector</p>
     <p class='p-main'>
-      Led development of a data export system and optimised backend data flows
-      for a platform serving over one million users. Reduced manual processes by
-      50% and improved data accuracy across departments through automation and
-      database restructuring.
+      A national public-sector workforce of 1M+ employees was running employee
+      health and wellbeing on fragmented manual processes, resulting in data
+      inaccuracies, delays, and compliance risk. 
+    </p>
+    <p class="p-main">
+      Oracle APEX integrated with AWS Workspaces, rather than a pure-code build:
+      low-code was faster where the UI didn't need to be bespoke, and custom
+      services picked up the gaps where governance couldn't be met by defaults.
+      Data governance was the primary constraint. Encryption, RBAC, audit
+      trails, and least-privilege throughout cut production vulnerabilities by
+      30%. Custom single-click export replaced cross-departmental manual pulls,
+      taking 50% off manual effort and 45% off response times.
     </p>
     <ul class='project'>
-      <div class='technologies-used'><li>JavaScript</li></div>
-      <div class='technologies-used'><li>Node</li></div>
-      <div class='technologies-used'><li>CSS</li></div>
-      <div class='technologies-used'><li>Oracle</li></div>
-      <div class='technologies-used'><li>SQL</li></div>
-    </ul>
-  </div>
-  <div>
-    <h3 class="projectHeading">Boutique Travel Concierge Platform</h3>
-    <p class='p-main'>
-      Built and styled a modular, responsive interface for a design-driven
-      travel platform focused on discovery and detail. Developed internal
-      automation using n8n and Notion, streamlining content workflows and
-      scaling collaboration for editors and designers.
-    </p>
-    <ul class='project'>
-      <div class='technologies-used'><li>JavaScript</li></div>
-      <div class='technologies-used'><li>PHP</li></div>
-      <div class='technologies-used'><li>Figma</li></div>
-      <div class='technologies-used'><li>Wordpress</li></div>
-      <div class='technologies-used'><li>CSS</li></div>
-      <div class='technologies-used'><li>n8n</li></div>
-    </ul>
-  </div>
-  <div>
-    <h3 class="projectHeading">Brand, Website & Digital Experience</h3>
-    <p class='p-main'>
-      An end-to-end redesign and build of a staffing agency, from
-      strategy and wireframes to a fully custom Next.js site, design system, and
-      SEO-ready launch focused on clarity, credibility, and conversion. 
-    </p>
-    <ul class='project'>
-      <div class='technologies-used'><li>TypeScript</li></div>
-      <div class='technologies-used'><li>Next.js</li></div>
-      <div class='technologies-used'><li>Tailwind CSS</li></div>
-      <div class='technologies-used'><li>Figma</li></div>
+      <li class='technologies-used'>Oracle APEX</li>
+      <li class='technologies-used'>PL/SQL</li>
+      <li class='technologies-used'>SQL</li>
+      <li class='technologies-used'>AWS</li>
+      <li class='technologies-used'>JavaScript</li>
+      <li class='technologies-used'>Node</li>
     </ul>
   </div>
 </BaseLayout>
